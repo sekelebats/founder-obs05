@@ -2,344 +2,642 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Solusi Website Profesional Tanpa Ribet</title>
-    <!-- Halaman ini murni HTML tanpa CSS dan JavaScript -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebInstalMurah | Jasa Website & Instalasi Tanpa Ribet</title>
+    <meta name="description" content="Punya masalah biaya hosting mahal? Kami hadir dengan jasa deployment gratis di Netlify, Vercel, Carrd, kurasi kode legal, dan instalasi murah. Dapatkan website profesional tanpa langganan bulanan.">
+    <!-- Open Graph / Sosial Media -->
+    <meta property="og:title" content="WebInstalMurah - Jasa Website & Instalasi">
+    <meta property="og:description" content="Deployment gratis, kurasi kode legal, instalasi murah. Website live tanpa biaya bulanan.">
+    <meta property="og:image" content="https://img-hub.netlify.app/main/itslyfe.webp">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Gambar sesuai permintaan, URL bisa diganti nanti -->
-    <img src="https://img-hub.netlify.app/main/itslyfe.webp" alt="Ilustrasi ItsLyfe" width="300">
+/* === Box Sizing & Reset Profesional === */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-    <!-- Bagian 1: Masalah dan Solusi -->
-    <h1>Punya Masalah Ini? Kami Ada Solusinya.</h1>
-    <p>Anda ingin punya website sendiri, tapi selalu terhenti karena<br>
-    biaya hosting dan langganan tool premium yang mahal.</p>
-    <p>Anda ingin tampil profesional dengan link in bio, portfolio,<br>
-    atau landing page, tapi tidak mau ribet ngoding dari nol.</p>
-    <p>Anda sudah coba cari-cari template gratis, tapi bingung mana<br>
-    yang legal, mana yang aman, dan bagaimana cara memasangnya.</p>
-    <p>Jika itu yang Anda rasakan, Anda berada di tempat yang tepat.</p>
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl,
+dd,
+figure,
+blockquote,
+address {
+  margin: 0;
+  padding: 0;
+}
 
-    <h2>Solusi Kami</h2>
-    <p>Kami hadir untuk menjembatani keinginan Anda memiliki website<br>
-    profesional dengan kenyataan bahwa tidak semua orang perlu<br>
-    mengeluarkan uang ratusan ribu per bulan hanya untuk hosting<br>
-    dan template premium.</p>
-    <p>Kami percaya bahwa dengan memaksimalkan platform gratis yang<br>
-    sudah disediakan oleh Netlify, Vercel, dan Carrd, siapa pun<br>
-    bisa memiliki online presence yang memukau. Tugas kami adalah<br>
-    mewujudkannya untuk Anda, tanpa Anda perlu pusing memikirkan<br>
-    teknisnya.</p>
+/* === Properti Akar === */
+html {
+  font-size: 100%; /* 16px default */
+}
 
-    <h2>Apa yang Kami Jual?</h2>
-    <p>Kami tidak menjual software. Kami tidak menjual template premium.<br>
-    Kami menjual hasil kerja, keahlian, dan kenyamanan.</p>
-    <p>Berikut produk dan layanan yang kami tawarkan.</p>
+/* Smooth scroll hanya jika pengguna tidak keberatan */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
 
-    <h3>1. Jasa Deployment Website di Netlify dan Vercel (Gratis)</h3>
-    <p>Kami akan mengonlinekan website Anda menggunakan akun gratis<br>
-    Netlify atau Vercel. Kenapa gratis? Karena untuk website statis,<br>
-    landing page, atau link in bio, paket gratis kedua platform ini<br>
-    sudah lebih dari cukup.</p>
-    <p>Kami yang akan mendaftarkan akun dengan nama pengguna pilihan<br>
-    Anda, mengunggah kode, mengatur konfigurasi, dan memastikan<br>
-    website Anda live. Setelah selesai, akun dan kode sumber<br>
-    sepenuhnya milik Anda. Tidak ada biaya bulanan, tidak ada<br>
-    ketergantungan pada kami.</p>
+body {
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  line-height: 1.5;
+  min-height: 100vh;
+  background-color: #fefefe;
+  color: #111;
+}
 
-    <h3>2. Jasa Desain Halaman dengan Carrd (Free Plan)</h3>
-    <p>Kami akan mendesain halaman one-page yang elegan menggunakan<br>
-    Carrd versi gratis. Anda bisa memiliki website yang terlihat<br>
-    mahal tanpa biaya langganan.</p>
-    <p>Perlu diketahui, ada beberapa batasan di Carrd free plan seperti<br>
-    jumlah elemen terbatas, tidak bisa menggunakan template premium<br>
-    bawaan Carrd, dan tidak bisa memasang custom domain. Jika desain<br>
-    yang Anda inginkan membutuhkan fitur di luar itu, kami akan<br>
-    menginformasikan sejak awal. Biaya upgrade ke Carrd Pro tetap<br>
-    menjadi milik Anda, bukan bagian dari jasa kami.</p>
+/* === Media Responsif === */
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
 
-    <h3>3. Jasa Kurasi Kode HTML dan Template Gratis Berlisensi Resmi</h3>
-    <p>Kami menghabiskan waktu berjam-jam untuk mencari, menyeleksi,<br>
-    menguji, dan mengkurasi kode HTML dan template website dari<br>
-    GitHub dan sumber terbuka lainnya. Semua kode yang kami kurasi<br>
-    memiliki lisensi yang jelas dan legal untuk digunakan kembali,<br>
-    seperti MIT, GPL, Apache, dan Creative Commons.</p>
-    <p>Anda tidak perlu lagi mencari sendiri, mengecek lisensi,<br>
-    atau takut melanggar hak cipta. Semua sudah kami saring.<br>
-    Anda tinggal pilih, kami sediakan.</p>
+/* === Variabel Global === */
+:root {
+  --color-primary: #0b5fa5;
+  --color-primary-dark: #08447a;
+  --color-secondary: #2c7a4d;
+  --color-gray-100: #f8f9fa;
+  --color-gray-200: #e9ecef;
+  --color-gray-700: #495057;
+  --color-text: #212529;
+  --max-width: 75rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+}
 
-    <h3>4. Jasa Instalasi Kode</h3>
-    <p>Punya kode hasil kurasi tapi tidak tahu cara memasangnya?<br>
-    Kami yang akan menginstal dan mengkonfigurasi untuk Anda.<br>
-    Mulai dari upload ke hosting atau platform gratis, pengaturan<br>
-    dasar, hingga penyesuaian sederhana agar langsung berfungsi<br>
-    sesuai kebutuhan Anda.</p>
+/* === Tipografi === */
+h1, h2, h3, h4 {
+  line-height: 1.2;
+  margin-bottom: var(--spacing-md);
+  font-weight: 700;
+}
+h1 {
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+}
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  border-left: 5px solid var(--color-primary);
+  padding-left: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+h3 {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  color: var(--color-primary-dark);
+}
+p, li, address {
+  margin-bottom: var(--spacing-sm);
+  max-width: 70ch;
+}
 
-    <h3>5. Jasa Maintenance</h3>
-    <p>Setelah website Anda live, kami juga menyediakan layanan<br>
-    perawatan. Update, perbaikan kecil, atau penyesuaian jika ada<br>
-    perubahan kebutuhan. Semua bisa kami bantu. Anda fokus ke<br>
-    konten atau bisnis Anda, kami urus teknisnya.</p>
+/* === Kontainer === */
+.container {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--spacing-md);
+}
 
-    <h2>Kenapa Harus Memilih Kami?</h2>
-    <p>Pertama, Anda hemat. Tidak perlu berlangganan hosting premium<br>
-    atau tool berbayar bulanan. Kami memaksimalkan yang gratis<br>
-    untuk Anda.</p>
-    <p>Kedua, semuanya legal. Setiap kode yang kami gunakan memiliki<br>
-    lisensi resmi yang memperbolehkan penggunaan kembali. Anda<br>
-    tidak perlu khawatir soal hak cipta.</p>
-    <p>Ketiga, akun jadi milik Anda. Kami tidak menyewakan akun atau<br>
-    menahan kredensial. Setelah pekerjaan selesai, semuanya kami<br>
-    serahkan penuh kepada Anda.</p>
-    <p>Keempat, Anda tidak perlu ngoding. Tidak perlu pusing dengan<br>
-    istilah teknis. Kami yang mengerjakan, Anda tinggal terima jadi.</p>
+/* === Header & Navigasi === */
+header {
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(4px);
+  background-color: rgba(255,255,255,0.95);
+}
+.header-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: var(--spacing-sm);
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.logo span {
+  color: var(--color-primary);
+}
+.mobile-nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+nav ul {
+  display: flex;
+  gap: var(--spacing-md);
+  list-style: none;
+}
+nav a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 500;
+  padding: var(--spacing-sm) 0;
+}
+nav a:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+nav a:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+}
 
-    <h2>Siapa yang Cocok Menggunakan Jasa Kami?</h2>
-    <ul>
-        <li>Konten kreator yang ingin punya link in bio profesional</li>
-        <li>Freelancer yang butuh portfolio online cepat</li>
-        <li>Pebisnis kecil yang ingin landing page sederhana</li>
-        <li>Siapa pun yang ingin tampil online tanpa ribet dan mahal</li>
-    </ul>
+/* === Hero Section === */
+.hero {
+  padding-block: var(--spacing-xl);
+  background: linear-gradient(145deg, #ffffff 0%, var(--color-gray-100) 100%);
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+  align-items: center;
+}
+.hero-text h1 span {
+  color: var(--color-primary);
+}
+.hero-image img {
+  border-radius: 24px;
+  box-shadow: 0 20px 30px -12px rgba(0,0,0,0.15);
+  width: 100%;
+  height: auto;
+}
+.btn {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: white;
+  padding: 0.75rem 1.8rem;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: var(--spacing-md);
+  transition: background 0.2s ease;
+}
+.btn:hover {
+  background-color: var(--color-primary-dark);
+}
+.btn:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+}
 
-    <h2>Cara Pesan</h2>
-    <p>Hubungi kami melalui kontak yang tersedia. Ceritakan kebutuhan<br>
-    Anda, kami akan berikan rekomendasi solusi terbaiknya.</p>
-    <p>Dari masalah jadi solusi. Dari ide jadi website live. Tanpa<br>
-    ribet, tanpa mahal.</p>
+/* === Card Grid === */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+  margin-block: var(--spacing-lg);
+}
+.card {
+  background: white;
+  border-radius: 20px;
+  padding: var(--spacing-lg);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid var(--color-gray-200);
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -12px rgba(0,0,0,0.1);
+}
+.card h3 {
+  margin-top: 0;
+}
 
-    <hr>
+/* === Checklist === */
+.check-list {
+  list-style: none;
+  padding-left: 0;
+}
+.check-list li {
+  padding-left: 1.8rem;
+  position: relative;
+  margin-bottom: var(--spacing-sm);
+}
+.check-list li::before {
+  content: "✓";
+  color: var(--color-secondary);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
 
-    <!-- Bagian Layanan Kami (versi lebih rinci) -->
-    <h2>Layanan Kami</h2>
-    <p>Kami menyediakan layanan pembuatan website dan halaman online yang 
-    fokus pada kecepatan, kemudahan, dan biaya minimal. Semua yang kami 
-    kerjakan memanfaatkan platform kelas gratis agar Anda cukup membayar 
-    jasa kami tanpa perlu berlangganan layanan premium.</p>
+/* === Section umum === */
+section {
+  padding-block: var(--spacing-lg);
+  border-bottom: 1px solid var(--color-gray-200);
+}
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--color-gray-700);
+  margin-bottom: var(--spacing-lg);
+}
+.layanan-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+.layanan-list article {
+  background: var(--color-gray-100);
+  padding: var(--spacing-md);
+  border-radius: 16px;
+}
 
-    <h3>Apa yang Kami Tawarkan?</h3>
+/* === Terms & details === */
+details {
+  background: var(--color-gray-100);
+  border-radius: 20px;
+  padding: var(--spacing-md);
+  margin-block: var(--spacing-md);
+}
+summary {
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: var(--spacing-sm);
+}
+summary:focus-visible {
+  outline: 2px solid var(--color-primary);
+  border-radius: 8px;
+}
+.terms-content {
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-gray-200);
+  font-size: 0.9rem;
+  max-height: 400px;
+  overflow-y: auto;
+}
 
-    <h4>1. Deployment Website di Netlify dan Vercel Kelas Gratis</h4>
-    <p>Kami akan memasang dan mengonlinekan website Anda menggunakan 
-    Netlify atau Vercel versi gratis. Akun gratis kedua platform ini 
-    sudah sangat mumpuni untuk website statis, link in bio, portfolio, 
-    atau landing page. Anda bisa memiliki website live dengan domain 
-    standar dari Netlify atau Vercel tanpa biaya bulanan.</p>
+/* === Footer === */
+footer {
+  background-color: var(--color-gray-100);
+  padding-block: var(--spacing-lg);
+  text-align: center;
+  font-size: 0.9rem;
+}
+address {
+  font-style: normal;
+  margin-bottom: var(--spacing-sm);
+}
+footer a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
 
-    <h4>2. Desain Halaman dengan Carrd Versi Gratis</h4>
-    <p>Kami juga mendesain halaman menggunakan Carrd versi gratis. Carrd 
-    adalah platform pembuat website satu halaman yang sangat mudah 
-    dikelola. Dengan akun gratis Carrd Anda bisa memiliki satu website 
-    yang kami desain sendiri sesuai kebutuhan Anda.</p>
-    <p><strong>Catatan Penting Mengenai Carrd Free:</strong><br>
-    Pada rencana gratis Carrd, terdapat keterbatasan seperti jumlah 
-    elemen, fitur, dan tidak bisa menggunakan aset premium atau template 
-    berbayar. Beberapa desain mungkin memerlukan fitur yang hanya 
-    tersedia di paket premium Carrd. Jika Anda menginginkan desain 
-    tertentu yang membutuhkan fitur premium, kami akan informasikan 
-    sejak awal dan Anda perlu berlangganan paket Carrd Pro secara mandiri. 
-    Biaya langganan Carrd sepenuhnya milik Anda dan bukan bagian dari 
-    jasa kami.</p>
+/* === Responsive (mobile-first, tambahan untuk mobile) === */
+@media (max-width: 48em) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .hero-image {
+    order: -1;
+    max-width: 80%;
+    margin-inline: auto;
+  }
+  .header-container {
+    flex-direction: row;
+  }
+  .mobile-nav-toggle {
+    display: block;
+  }
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: var(--spacing-md);
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    gap: var(--spacing-md);
+  }
+  nav ul.show {
+    display: flex;
+  }
+  h2 {
+    border-left: none;
+    border-bottom: 3px solid var(--color-primary);
+    padding-left: 0;
+    padding-bottom: var(--spacing-sm);
+  }
+}
 
-    <h4>3. Pembuatan Akun dengan Nama User Pilihan</h4>
-    <p>Kami akan mendaftarkan akun di Netlify, Vercel, atau Carrd dengan 
-    nama pengguna yang Anda inginkan. Anda akan menerima akses penuh 
-    ke akun tersebut, termasuk kode sumber, file proyek, dan kredensial. 
-    Setelah pekerjaan selesai, akun sepenuhnya milik Anda. Tidak ada 
-    ketergantungan pada kami.</p>
+/* === Aksesibilitas === */
+:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
 
-    <h4>4. Jasa Kurasi Kode</h4>
-    <p>Kami mencari, menyeleksi, menguji, dan mengkurasi kode dari berbagai 
-    sumber terbuka seperti GitHub dan WordPress. Kode yang kami kurasi 
-    berasal dari lisensi yang aman dan legal untuk digunakan kembali. 
-    Anda tinggal memilih, kami siapkan kode terbaiknya.</p>
+/* === Print styles === */
+@media print {
+  header, .btn, nav, .mobile-nav-toggle, footer {
+    display: none;
+  }
+  body {
+    font-size: 12pt;
+    color: black;
+    background: white;
+  }
+  .card {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+}
+</style>
+<header>
+    <div class="container header-container">
+        <div class="logo">⚡ WebInstal<span>Murah</span></div>
+        <button class="mobile-nav-toggle" aria-label="Buka menu" aria-expanded="false">☰</button>
+        <nav aria-label="Navigasi utama">
+            <ul>
+                <li><a href="#masalah">Masalah</a></li>
+                <li><a href="#layanan">Layanan</a></li>
+                <li><a href="#tentang-bisnis">Tentang</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
-    <h4>5. Jasa Instalasi Kode</h4>
-    <p>Setelah kode dikurasi, kami yang akan memasang dan mengkonfigurasinya 
-    untuk Anda. Mulai dari upload, pengaturan dasar, hingga penyesuaian 
-    sederhana agar langsung berfungsi. Tidak perlu pusing mengutak-atik 
-    teknis.</p>
+<main>
+    <!-- Hero + Gambar -->
+    <section class="hero" id="masalah">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <h1>Punya Masalah Ini? <span>Kami Ada Solusinya.</span></h1>
+                <p>Anda ingin punya website sendiri, tapi selalu terhenti karena biaya hosting dan langganan tool premium yang mahal.</p>
+                <p>Anda ingin tampil profesional dengan link in bio, portfolio, atau landing page, tapi tidak mau ribet ngoding dari nol.</p>
+                <p>Anda sudah coba cari-cari template gratis, tapi bingung mana yang legal, mana yang aman, dan bagaimana cara memasangnya.</p>
+                <p><strong>Jika itu yang Anda rasakan, Anda berada di tempat yang tepat.</strong></p>
+                <a href="#cara-pesan" class="btn">Pesan Jasa Sekarang →</a>
+            </div>
+            <figure class="hero-image">
+                <img src="https://img-hub.netlify.app/main/itslyfe.webp" alt="Ilustrasi solusi website tanpa ribet" width="500" height="500" loading="eager">
+                <figcaption>Website profesional, biaya minimal</figcaption>
+            </figure>
+        </div>
+    </section>
 
-    <h4>6. Jasa Maintenance Kode</h4>
-    <p>Kami juga menyediakan layanan perawatan untuk kode yang sudah kami 
-    instal. Jika ada pembaruan, bug, atau perlu penyesuaian kecil, 
-    kami siap membantu. Dengan biaya terjangkau, website Anda tetap 
-    terjaga.</p>
+    <!-- Solusi Kami -->
+    <section class="solusi">
+        <div class="container">
+            <h2>Solusi Kami</h2>
+            <p>Kami hadir untuk menjembatani keinginan Anda memiliki website profesional dengan kenyataan bahwa tidak semua orang perlu mengeluarkan uang ratusan ribu per bulan hanya untuk hosting dan template premium.</p>
+            <p>Kami percaya bahwa dengan memaksimalkan platform gratis yang sudah disediakan oleh Netlify, Vercel, dan Carrd, siapa pun bisa memiliki online presence yang memukau. Tugas kami adalah mewujudkannya untuk Anda, tanpa Anda perlu pusing memikirkan teknisnya.</p>
+        </div>
+    </section>
 
-    <h3>Mengapa Memilih Kami?</h3>
-    <ul>
-        <li>Tidak perlu berlangganan layanan premium bulanan. Kami memaksimalkan platform gratis.</li>
-        <li>Anda mendapat akun sendiri, bukan sewa atau nebeng.</li>
-        <li>Semua kode kami kurasi dengan lisensi resmi.</li>
-        <li>Cocok untuk link in bio, portfolio, landing page, website pribadi, atau proyek kecil lainnya.</li>
-    </ul>
-    <p>Untuk pemesanan atau pertanyaan, silakan hubungi kami melalui kontak yang tersedia.</p>
+    <!-- Apa yang Kami Jual? (5 layanan utama) -->
+    <section class="jual" id="layanan">
+        <div class="container">
+            <h2>Apa yang Kami Jual?</h2>
+            <p class="subtitle">Kami tidak menjual software. Kami menjual hasil kerja, keahlian, dan kenyamanan.</p>
+            <div class="card-grid">
+                <article class="card">
+                    <h3>1. Jasa Deployment Website di Netlify & Vercel (Gratis)</h3>
+                    <p>Kami akan mengonlinekan website Anda menggunakan akun gratis Netlify atau Vercel. Paket gratis sudah cukup untuk website statis, landing page, atau link in bio. Akun dan kode sumber sepenuhnya milik Anda. <strong>Tanpa biaya bulanan.</strong></p>
+                </article>
+                <article class="card">
+                    <h3>2. Jasa Desain Halaman dengan Carrd (Free Plan)</h3>
+                    <p>Desain one-page elegan dengan Carrd versi gratis. Batasan free plan akan kami jelaskan sejak awal. Anda bisa upgrade ke Carrd Pro sendiri jika diperlukan.</p>
+                </article>
+                <article class="card">
+                    <h3>3. Jasa Kurasi Kode HTML & Template Gratis Berlisensi Resmi</h3>
+                    <p>Kami kurasi dari GitHub dan sumber terbuka dengan lisensi MIT, GPL, Apache, Creative Commons. Legal, aman, dan siap pakai. Anda tinggal pilih.</p>
+                </article>
+                <article class="card">
+                    <h3>4. Jasa Instalasi Kode</h3>
+                    <p>Punya kode hasil kurasi tapi tidak tahu cara memasangnya? Kami yang akan menginstal, mengkonfigurasi, dan menyesuaikan agar langsung berfungsi.</p>
+                </article>
+                <article class="card">
+                    <h3>5. Jasa Maintenance</h3>
+                    <p>Update, perbaikan kecil, penyesuaian kebutuhan. Anda fokus ke konten atau bisnis, kami urus teknisnya dengan biaya terjangkau.</p>
+                </article>
+            </div>
+        </div>
+    </section>
 
-    <hr>
+    <!-- Kenapa Harus Memilih Kami -->
+    <section class="kenapa">
+        <div class="container">
+            <h2>Kenapa Harus Memilih Kami?</h2>
+            <ul class="check-list">
+                <li><strong>Hemat</strong> – Tidak perlu langganan hosting premium atau tool berbayar bulanan.</li>
+                <li><strong>Legal</strong> – Setiap kode memiliki lisensi resmi yang memperbolehkan penggunaan kembali.</li>
+                <li><strong>Akun jadi milik Anda</strong> – Kami tidak menyewakan atau menahan kredensial.</li>
+                <li><strong>Tanpa ngoding</strong> – Anda tinggal terima jadi, kami yang mengerjakan semua teknis.</li>
+            </ul>
+        </div>
+    </section>
 
-    <!-- TENTANG BISNIS KAMI -->
-    <h2>TENTANG BISNIS KAMI</h2>
+    <!-- Siapa yang Cocok & Cara Pesan -->
+    <section class="target">
+        <div class="container">
+            <h2>Siapa yang Cocok Menggunakan Jasa Kami?</h2>
+            <ul>
+                <li>Konten kreator yang ingin punya link in bio profesional</li>
+                <li>Freelancer yang butuh portfolio online cepat</li>
+                <li>Pebisnis kecil yang ingin landing page sederhana</li>
+                <li>Siapa pun yang ingin tampil online tanpa ribet dan mahal</li>
+            </ul>
+        </div>
+    </section>
 
-    <h3>Apa yang Kami Jual?</h3>
-    <p>Kami tidak menjual kode. Kami juga tidak mengklaim telah menciptakan 
-    kode yang ada di produk kami.</p>
-    <p>Kami menjual hasil kerja kurasi.</p>
+    <section class="cara-pesan" id="cara-pesan">
+        <div class="container">
+            <h2>Cara Pesan</h2>
+            <p>Hubungi kami melalui kontak di bawah. Ceritakan kebutuhan Anda, kami akan berikan rekomendasi solusi terbaiknya.</p>
+            <p><strong>Dari masalah jadi solusi. Dari ide jadi website live. Tanpa ribet, tanpa mahal.</strong></p>
+        </div>
+    </section>
 
-    <h3>Memahami Konsep Kurasi</h3>
-    <p>Ibaratnya seperti ini. Ada jutaan buku di perpustakaan raksasa seperti 
-    GitHub dan WordPress.org. Semua buku itu gratis dan sah untuk dibaca. 
-    Namun, mencari buku yang tepat dan berkualitas di antara jutaan pilihan 
-    membutuhkan waktu, tenaga, dan pengetahuan untuk memilahnya.</p>
-    <p>Kami adalah pustakawan yang menghabiskan waktu berjam-jam, berhari-hari, 
-    bahkan berminggu-minggu untuk mencari, menyeleksi, menguji, 
-    mengelompokkan, dan mendokumentasikan koleksi terbaik. Hasil kerja itu 
-    kami kemas dan tawarkan kepada Anda.</p>
-    <p>Apa yang Anda bayar bukan untuk kode itu sendiri, melainkan untuk 
-    efisiensi, kenyamanan, dan kepercayaan bahwa kode tersebut sudah 
-    melalui proses seleksi.</p>
+    <!-- Layanan Kami (detail lebih rinci) -->
+    <section class="layanan-detail">
+        <div class="container">
+            <h2>Layanan Kami</h2>
+            <p>Kami menyediakan layanan pembuatan website dan halaman online yang fokus pada kecepatan, kemudahan, dan biaya minimal. Semua memanfaatkan platform kelas gratis.</p>
+            <div class="layanan-list">
+                <article>
+                    <h3>Deployment di Netlify / Vercel (gratis)</h3>
+                    <p>Website live dengan domain standar, tanpa biaya bulanan. Cocok untuk statis, portfolio, landing page.</p>
+                </article>
+                <article>
+                    <h3>Desain dengan Carrd (free)</h3>
+                    <p>Halaman satu halaman elegan. Catatan: free plan memiliki batasan, kami informasikan transparan.</p>
+                </article>
+                <article>
+                    <h3>Pembuatan akun dengan nama user pilihan</h3>
+                    <p>Kami daftarkan akun Netlify/Vercel/Carrd sesuai keinginan Anda. Akses penuh diserahkan setelah selesai.</p>
+                </article>
+                <article>
+                    <h3>Jasa Kurasi Kode</h3>
+                    <p>Seleksi, uji, dokumentasi lisensi. Anda tidak perlu repot mencari sendiri.</p>
+                </article>
+                <article>
+                    <h3>Instalasi & Maintenance</h3>
+                    <p>Pasang, konfigurasi, dan perawatan berkala. Update dan perbaikan bug.</p>
+                </article>
+            </div>
+        </div>
+    </section>
 
-    <h3>Dari Mana Sumber Kode Kami?</h3>
-    <p>Semua kode yang ada dalam produk kami berasal dari sumber publik dan 
-    legal, termasuk:</p>
-    <ul>
-        <li>GitHub, platform penyimpanan kode terbesar di dunia dengan jutaan proyek open source</li>
-        <li>Direktori resmi WordPress.org, yang semua tema dan pluginnya berlisensi GPL</li>
-        <li>Repositori open source lainnya yang menyediakan aset di bawah lisensi permisif seperti MIT, Apache, atau Creative Commons</li>
-    </ul>
-    <p>Kami hanya menyertakan kode yang memiliki lisensi jelas dan secara 
-    eksplisit memperbolehkan redistribusi. Kode tanpa lisensi atau dengan 
-    lisensi yang melarang redistribusi tidak akan pernah masuk dalam 
-    produk kami.</p>
+    <!-- Tentang Bisnis Kami (konsep kurasi, legal, mengapa bayar) -->
+    <section class="tentang-bisnis" id="tentang-bisnis">
+        <div class="container">
+            <h2>Tentang Bisnis Kami</h2>
+            <article>
+                <h3>Apa yang Kami Jual?</h3>
+                <p>Kami tidak menjual kode. Kami menjual hasil kerja <strong>kurasi</strong>. Ibarat pustakawan yang menghabiskan waktu berjam-jam untuk mencari, menyeleksi, dan menguji aset gratis terbaik dari GitHub, WordPress.org, dan repositori open source. Anda membayar efisiensi, kenyamanan, dan kepercayaan bahwa semua sudah melalui proses seleksi.</p>
+                <p>Dari mana sumber kode? GitHub, WordPress.org, repositori open source dengan lisensi permisif (MIT, Apache, GPL, Creative Commons).</p>
+            </article>
+            <article>
+                <h3>Apakah Ini Legal?</h3>
+                <p>Ya, sepenuhnya legal. Kami hanya menyertakan kode dengan lisensi yang mengizinkan redistribusi. Kami patuh pada lisensi asli dan transparan mengenai hak cipta.</p>
+            </article>
+            <article>
+                <h3>Mengapa Harus Membayar Jika Gratis?</h3>
+                <ul>
+                    <li>Waktu Anda berharga – kami yang mencari dan memverifikasi.</li>
+                    <li>Kualitas terjamin – kami uji dan saring bug.</li>
+                    <li>Kepatuhan lisensi – kami dokumentasikan untuk Anda.</li>
+                    <li>Organisasi rapi – kode dikategorikan dan siap pakai.</li>
+                </ul>
+            </article>
+            <article>
+                <h3>Komitmen Kami</h3>
+                <ol>
+                    <li>Transparansi penuh – lisensi asli dicantumkan.</li>
+                    <li>Kurasi berkualitas – setiap aset diseleksi.</li>
+                    <li>Kepatuhan hukum – hanya aset dengan lisensi redistribusi.</li>
+                    <li>Pelayanan – siap menjawab pertanyaan lisensi.</li>
+                </ol>
+            </article>
+        </div>
+    </section>
 
-    <h3>Apakah Ini Legal?</h3>
-    <p>Ya, sepenuhnya legal. Kami beroperasi dengan mematuhi lisensi asli 
-    dari setiap aset yang kami kurasi.</p>
-    <p>Lisensi seperti GPL, MIT, dan Apache secara eksplisit memperbolehkan 
-    redistribusi, termasuk dalam bentuk kurasi berbayar, selama ketentuan 
-    lisensi tetap dihormati. Kami menjalankan bisnis ini dengan transparansi 
-    penuh mengenai hak cipta dan lisensi asli.</p>
-    <p>Kepatuhan terhadap lisensi adalah fondasi bisnis kami.</p>
+    <!-- Syarat dan Ketentuan (diringkas dalam details) -->
+    <section class="terms">
+        <div class="container">
+            <details>
+                <summary><strong>Syarat dan Ketentuan</strong> (klik untuk baca lengkap)</summary>
+                <div class="terms-content">
+                    <p><strong>Terakhir Diperbarui:</strong> 16 Mei 2026</p>
+                    <h4>1. Penerimaan Syarat</h4>
+                    <p>Dengan mengakses dan menggunakan NamaWebsiteAnda.com serta membeli produk digital, Anda menyetujui Syarat ini.</p>
+                    <h4>2. Definisi</h4>
+                    <p><strong>Kami</strong> merujuk pada penyedia produk digital hasil kurasi. <strong>Produk</strong> adalah file digital, paket kode, template. <strong>Aset Gratis</strong> adalah file yang tersedia publik di bawah lisensi redistribusi (GPL, MIT, dll).</p>
+                    <h4>3. Sifat Produk Kami</h4>
+                    <p>Kami tidak mengklaim kepemilikan atas aset individual. Anda membayar pekerjaan kurasi, pengorganisasian, dan dokumentasi.</p>
+                    <h4>4. Lisensi Masing-masing Aset</h4>
+                    <p>Setiap aset mempertahankan lisensi aslinya. Tanggung jawab Anda untuk mematuhi lisensi tersebut.</p>
+                    <h4>5. Hal yang Boleh Dilakukan</h4>
+                    <ul>
+                        <li>Menggunakan produk pada proyek tanpa batas (dengan mematuhi lisensi asli).</li>
+                        <li>Memodifikasi sesuai izin lisensi.</li>
+                        <li>Menjual kembali aset individu hanya jika lisensi memperbolehkan.</li>
+                    </ul>
+                    <h4>6. Hal yang Tidak Boleh Dilakukan</h4>
+                    <ul>
+                        <li>Mengklaim hak cipta atas aset gratis.</li>
+                        <li>Melisensikan ulang aset.</li>
+                        <li>Menjual koleksi kurasi sebagai milik sendiri tanpa izin tertulis.</li>
+                    </ul>
+                    <h4>7. Tanpa Garansi</h4>
+                    <p>Produk disediakan "apa adanya". Kami tidak menjamin bebas error atau sesuai kebutuhan spesifik Anda.</p>
+                    <h4>8. Batasan Tanggung Jawab</h4>
+                    <p>Kami tidak bertanggung jawab atas kerusakan langsung/tidak langsung.</p>
+                    <h4>9. Pengembalian Dana</h4>
+                    <p>Karena sifat digital, semua penjualan bersifat final.</p>
+                    <h4>10. Ganti Rugi</h4>
+                    <p>Anda setuju mengganti rugi jika melanggar syarat atau lisensi asli.</p>
+                    <h4>11. Perubahan Syarat</h4>
+                    <p>Perubahan akan diposting di halaman ini.</p>
+                    <h4>12. Kontak</h4>
+                    <p>Email: <a href="mailto:emailanda@email.com">emailanda@email.com</a></p>
+                </div>
+            </details>
+        </div>
+    </section>
 
-    <h3>Mengapa Harus Membayar Jika Gratis?</h3>
-    <p>Ini adalah pertanyaan yang paling sering kami terima. Berikut alasannya:</p>
-    <ul>
-        <li>Waktu adalah uang. Mencari satu plugin atau template berkualitas bisa memakan waktu berjam-jam. Sekarang kalikan untuk puluhan atau ratusan item.</li>
-        <li>Verifikasi kualitas. Tidak semua kode gratis itu bagus. Banyak yang terbengkalai, tidak kompatibel, atau memiliki bug. Kami menguji dan menyeleksinya.</li>
-        <li>Kepatuhan lisensi. Memahami lisensi setiap aset bisa membingungkan. Kami mendokumentasikannya untuk Anda.</li>
-        <li>Organisasi. Ribuan file kami kategorikan, beri label, dan susun agar mudah ditemukan dan digunakan.</li>
-    </ul>
-    <p>Biaya yang Anda keluarkan adalah investasi untuk menghemat puluhan 
-    jam kerja Anda sendiri.</p>
+    <!-- Footer + Kontak -->
+    <footer id="kontak">
+        <div class="container">
+            <address>
+                Hubungi kami: <a href="mailto:emailanda@email.com">emailanda@email.com</a><br>
+                atau media sosial @webinstalmurah
+            </address>
+            <p>&copy; 2026 WebInstalMurah. Hasil kurasi legal, bebas ribet.</p>
+        </div>
+    </footer>
+</main>
 
-    <h3>Komitmen Kami</h3>
-    <ol>
-        <li>Transparansi penuh. Kami selalu mencantumkan lisensi asli dari setiap aset yang disertakan.</li>
-        <li>Kurasi berkualitas. Kami tidak asal mengumpulkan. Setiap aset melalui proses seleksi.</li>
-        <li>Kepatuhan hukum. Kami hanya mendistribusikan aset yang lisensinya mengizinkan redistribusi.</li>
-        <li>Pelayanan. Jika Anda memiliki pertanyaan tentang lisensi atau penggunaan, kami siap membantu.</li>
-    </ol>
+<script>
+    // JavaScript ringan sesuai aturan (DOMContentLoaded, smooth scroll, mobile menu)
+    document.addEventListener("DOMContentLoaded", () => {
+        // === Smooth scroll untuk semua anchor link internal ===
+        const allLinks = document.querySelectorAll('a[href^="#"]');
+        allLinks.forEach(link => {
+            link.addEventListener("click", function(e) {
+                const targetId = this.getAttribute("href");
+                if (targetId === "#") return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    targetElement.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+                    // Update URL tanpa loncatan (opsional)
+                    history.pushState(null, null, targetId);
+                }
+            });
+        });
 
-    <h3>Punya Pertanyaan?</h3>
-    <p>Silakan hubungi kami di emailanda@email.com</p>
-
-    <hr>
-
-    <!-- SYARAT DAN KETENTUAN -->
-    <h2>SYARAT DAN KETENTUAN</h2>
-    <p><strong>Terakhir Diperbarui:</strong> 16 Mei 2026</p>
-
-    <h3>1. Penerimaan Syarat</h3>
-    <p>Dengan mengakses dan menggunakan NamaWebsiteAnda.com serta membeli 
-    produk digital apa pun dari website ini, Anda menyetujui Syarat dan 
-    Ketentuan ini. Jika Anda tidak setuju, mohon jangan gunakan layanan kami.</p>
-
-    <h3>2. Definisi</h3>
-    <p>Kami merujuk pada NamaWebsiteAnda.com selaku penyedia produk digital 
-    hasil kurasi.</p>
-    <p>Produk merujuk pada file digital, paket kode, template, dan konten 
-    unduhan lainnya yang tersedia di website ini.</p>
-    <p>Aset Gratis merujuk pada file digital asli yang tersedia secara publik 
-    di internet di bawah lisensi yang memperbolehkan redistribusi, seperti 
-    GPL, MIT, Apache, Creative Commons, atau Domain Publik.</p>
-    <p>Anda atau Pengguna atau Pembeli merujuk pada individu yang membeli 
-    atau menggunakan Produk kami.</p>
-
-    <h3>3. Sifat Produk Kami</h3>
-    <p>Produk kami adalah koleksi hasil kurasi dari Aset Gratis yang bersumber 
-    dari berbagai repositori publik, termasuk namun tidak terbatas pada 
-    GitHub, WordPress.org, dan direktori open source lainnya.</p>
-    <p>Kami tidak mengklaim kepemilikan, hak cipta, atau kepenulisan atas 
-    masing-masing Aset Gratis yang terkandung dalam Produk kami. Semua 
-    aset individu tetap menjadi kekayaan intelektual dari pembuat aslinya 
-    dan tunduk pada lisensi asli mereka.</p>
-    <p>Apa yang Anda bayar adalah pekerjaan kurasi, pengorganisasian, 
-    pengkategorian, pengujian, dokumentasi, dan penyajian aset-aset ini. 
-    Layanan kami adalah waktu dan tenaga yang dihemat dalam mencari, 
-    memverifikasi, dan mengompilasi Aset Gratis berkualitas.</p>
-
-    <h3>4. Lisensi Masing-masing Aset</h3>
-    <p>Setiap Aset Gratis yang termasuk dalam Produk kami mempertahankan 
-    lisensi aslinya. Lisensi yang berlaku untuk setiap aset didokumentasikan 
-    di dalam file Produk, biasanya dalam file LICENSE.txt atau serupa.</p>
-    <p>Adalah tanggung jawab Anda sebagai Pengguna untuk meninjau dan mematuhi 
-    lisensi asli dari masing-masing aset yang Anda gunakan. Lisensi umum 
-    yang akan Anda temui meliputi GNU General Public License (GPL), MIT 
-    License, Apache License, dan berbagai lisensi Creative Commons.</p>
-    <p>Kami tidak dapat dan tidak boleh memberikan lisensi ulang, sub-lisensi, 
-    atau mengubah lisensi asli dari Aset Gratis mana pun yang termasuk 
-    dalam Produk kami.</p>
-
-    <h3>5. Hal yang Boleh Anda Lakukan</h3>
-    <ul>
-        <li>Menggunakan Produk pada proyek tanpa batas untuk diri sendiri atau klien Anda, tunduk pada lisensi asli masing-masing aset</li>
-        <li>Memodifikasi atau mengadaptasi aset sesuai yang diizinkan oleh lisensi aslinya masing-masing</li>
-        <li>Menjual kembali atau mendistribusikan ulang aset individu hanya jika lisensi aslinya secara eksplisit memperbolehkan Anda melakukannya</li>
-    </ul>
-
-    <h3>6. Hal yang Tidak Boleh Anda Lakukan</h3>
-    <ul>
-        <li>Mengklaim hak cipta atau kepemilikan intelektual atas masing-masing Aset Gratis</li>
-        <li>Memberikan lisensi ulang, sub-lisensi, atau mengubah lisensi asli dari masing-masing Aset Gratis</li>
-        <li>Menjual, mendistribusikan ulang, atau memberikan sub-lisensi Produk sebagai koleksi kurasi milik Anda sendiri tanpa izin tertulis dari kami</li>
-        <li>Menggunakan aset apa pun dengan cara yang melanggar lisensi aslinya</li>
-    </ul>
-
-    <h3>7. Tanpa Garansi</h3>
-    <p>Produk kami disediakan apa adanya, tanpa garansi apa pun, tersurat 
-    maupun tersirat. Kami tidak menjamin bahwa Produk akan memenuhi 
-    kebutuhan spesifik Anda, bahwa Produk akan bebas dari kesalahan, atau 
-    bahwa Produk akan berfungsi persis seperti yang Anda harapkan.</p>
-    <p>Kami telah melakukan upaya yang wajar untuk memverifikasi kualitas dan 
-    kepatuhan lisensi dari semua aset yang disertakan. Namun, Anda 
-    bertanggung jawab penuh untuk menguji dan memastikan kesesuaian aset 
-    apa pun untuk penggunaan yang Anda maksudkan.</p>
-
-    <h3>8. Batasan Tanggung Jawab</h3>
-    <p>Dalam keadaan apa pun NamaWebsiteAnda.com tidak bertanggung jawab atas 
-    kerusakan langsung, tidak langsung, insidental, khusus, atau 
-    konsekuensial yang timbul dari penggunaan atau ketidakmampuan menggunakan 
-    Produk kami.</p>
-
-    <h3>9. Kebijakan Pengembalian Dana</h3>
-    <p>Karena sifat digital dari Produk kami dan fakta bahwa Produk terdiri 
-    dari aset yang juga tersedia secara publik, semua penjualan bersifat 
-    final. Tidak ada pengembalian dana yang akan diberikan setelah Produk 
-    diunduh.</p>
-
-    <h3>10. Ganti Rugi</h3>
-    <p>Anda setuju untuk mengganti rugi dan membebaskan NamaWebsiteAnda.com 
-    dan pengelolanya dari segala klaim, kerusakan, atau biaya yang timbul 
-    dari pelanggaran Anda terhadap Syarat ini atau lisensi asli aset.</p>
-
-    <h3>11. Perubahan Syarat</h3>
-    <p>Kami berhak untuk mengubah Syarat ini kapan saja. Perubahan akan 
-    diposting di halaman ini dengan tanggal yang diperbarui. Penggunaan 
-    layanan kami yang berkelanjutan merupakan penerimaan terhadap Syarat 
-    yang diubah.</p>
-
-    <h3>12. Kontak</h3>
-    <p>Untuk pertanyaan apa pun mengenai Syarat ini, silakan hubungi kami 
-    di emailanda@email.com</p>
-
+        // === Mobile nav toggle ===
+        const navToggle = document.querySelector(".mobile-nav-toggle");
+        const navMenu = document.querySelector("nav ul");
+        if (navToggle && navMenu) {
+            navToggle.addEventListener("click", () => {
+                const expanded = navToggle.getAttribute("aria-expanded") === "true" ? false : true;
+                navToggle.setAttribute("aria-expanded", expanded);
+                navMenu.classList.toggle("show");
+            });
+        }
+    });
+</script>
 </body>
 </html>
