@@ -3,788 +3,494 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>WebInstalMurah | Jasa Website & Instalasi Tanpa Ribet</title>
-    <meta name="description" content="Punya masalah biaya hosting mahal? Kami hadir dengan jasa deployment gratis di Netlify, Vercel, Carrd, kurasi kode legal, dan instalasi murah. Dapatkan website profesional tanpa langganan bulanan.">
-    <!-- Open Graph / Sosial Media -->
-    <meta property="og:title" content="WebInstalMurah - Jasa Website & Instalasi">
-    <meta property="og:description" content="Deployment gratis, kurasi kode legal, instalasi murah. Website live tanpa biaya bulanan.">
-    <meta property="og:image" content="https://img-hub.netlify.app/main/itslyfe.webp">
-    <meta property="og:type" content="website">
-    <!-- Theme color untuk mobile browser -->
+    <title>WebInstalMurah | Website Jadi Tanpa Ribet & Bulanan</title>
+    <meta name="description" content="Jasa deployment gratis di Netlify/Vercel, kurasi kode legal, instalasi murah. Mulai Rp150.000. Tanpa langganan bulanan.">
+    <meta property="og:title" content="WebInstalMurah - Website Live Tanpa Biaya Bulanan">
+    <meta property="og:description" content="Deployment gratis, kurasi legal, mulai 150k.">
+    <meta property="og:image" content="https://ing-hub.netlify.app/main/betterlyfe.webp">
     <meta name="theme-color" content="#0b5fa5">
-    
     <style>
-    /* === RESET & BOX-SIZING MODERN === */
-    *,
-    *::before,
-    *::after {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
-
-    /* === VARIABEL GLOBAL (lebih pro & konsisten) === */
-    :root {
-        --color-primary: #0b5fa5;
-        --color-primary-dark: #08447a;
-        --color-primary-light: #2c7fc9;
-        --color-secondary: #2c7a4d;
-        --color-secondary-light: #3e9a62;
-        --color-gray-50: #fcfcfd;
-        --color-gray-100: #f8f9fa;
-        --color-gray-200: #eef2f4;
-        --color-gray-300: #dee2e6;
-        --color-gray-700: #2c3e44;
-        --color-gray-800: #1a252f;
-        --color-text: #1a2a33;
-        --color-text-soft: #2c3e44;
-        --max-width: 76rem;
-        --spacing-xs: 0.5rem;
-        --spacing-sm: 0.75rem;
-        --spacing-md: 1.25rem;
-        --spacing-lg: 2rem;
-        --spacing-xl: 3rem;
-        --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.03);
-        --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.06), 0 2px 4px rgba(0, 0, 0, 0.02);
-        --shadow-lg: 0 20px 30px -12px rgba(0, 0, 0, 0.1);
-        --shadow-hover: 0 24px 36px -12px rgba(0, 0, 0, 0.15);
-        --border-radius-card: 1.25rem;
-        --transition-fast: 0.2s ease;
-        --transition-normal: 0.25s cubic-bezier(0.2, 0, 0, 1);
-    }
-
-    html {
-        font-size: 100%;
-        -webkit-text-size-adjust: 100%;
-        scroll-padding-top: 5rem; /* offset untuk anchor */
-    }
-
-    @media (prefers-reduced-motion: no-preference) {
-        html {
-            scroll-behavior: smooth;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-    }
 
-    body {
-        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', sans-serif;
-        line-height: 1.5;
-        background-color: var(--color-gray-50);
-        color: var(--color-text);
-        min-height: 100vh;
-        text-rendering: optimizeLegibility;
-    }
-
-    /* === TYPOGRAPHY YANG LEBIH PRO === */
-    h1, h2, h3, h4 {
-        font-weight: 700;
-        line-height: 1.2;
-        letter-spacing: -0.02em;
-        margin-bottom: var(--spacing-sm);
-    }
-    h1 {
-        font-size: clamp(1.9rem, 6vw, 3.2rem);
-        font-weight: 800;
-        letter-spacing: -0.02em;
-        background: linear-gradient(135deg, var(--color-text) 0%, var(--color-primary-dark) 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-    }
-    h1 span {
-        background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-    }
-    h2 {
-        font-size: clamp(1.6rem, 4.5vw, 2.2rem);
-        border-left: 5px solid var(--color-primary);
-        padding-left: var(--spacing-md);
-        margin-top: 0;
-        margin-bottom: var(--spacing-lg);
-        color: var(--color-gray-800);
-    }
-    h3 {
-        font-size: clamp(1.2rem, 3vw, 1.5rem);
-        color: var(--color-primary-dark);
-        margin-bottom: var(--spacing-xs);
-    }
-    p, li, address {
-        margin-bottom: var(--spacing-sm);
-        max-width: 70ch;
-        color: var(--color-text-soft);
-    }
-    .subtitle {
-        font-size: 1.2rem;
-        color: var(--color-gray-700);
-        margin-bottom: var(--spacing-lg);
-        font-weight: 450;
-    }
-
-    /* === LAYOUT & KONTAINER === */
-    .container {
-        max-width: var(--max-width);
-        margin-inline: auto;
-        padding-inline: var(--spacing-md);
-    }
-
-    /* === SKIP TO CONTENT (aksesibilitas) === */
-    .skip-to-content {
-        position: absolute;
-        top: -40px;
-        left: 0;
-        background: var(--color-primary);
-        color: white;
-        padding: 0.5rem 1rem;
-        text-decoration: none;
-        z-index: 999;
-        font-weight: 500;
-        border-radius: 0 0 4px 0;
-    }
-    .skip-to-content:focus {
-        top: 0;
-    }
-
-    /* === HEADER STICKY MODERN === */
-    header {
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        background: rgba(255, 255, 255, 0.92);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        box-shadow: var(--shadow-sm);
-    }
-    .header-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        padding-block: 0.75rem;
-    }
-    .logo {
-        font-size: 1.65rem;
-        font-weight: 800;
-        letter-spacing: -0.02em;
-        background: linear-gradient(145deg, var(--color-gray-800) 20%, var(--color-primary) 80%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-    }
-    .logo span {
-        background: none;
-        color: var(--color-primary);
-        -webkit-text-fill-color: var(--color-primary);
-    }
-    .mobile-nav-toggle {
-        display: none;
-        background: none;
-        border: none;
-        font-size: 1.8rem;
-        cursor: pointer;
-        width: 44px;
-        height: 44px;
-        border-radius: 40px;
-        transition: background var(--transition-fast);
-        color: var(--color-gray-800);
-    }
-    .mobile-nav-toggle:hover {
-        background: var(--color-gray-200);
-    }
-    nav ul {
-        display: flex;
-        gap: var(--spacing-md);
-        list-style: none;
-    }
-    nav a {
-        text-decoration: none;
-        color: var(--color-text);
-        font-weight: 550;
-        padding: 0.5rem 0;
-        transition: color var(--transition-fast);
-        border-bottom: 2px solid transparent;
-    }
-    nav a:hover {
-        color: var(--color-primary);
-        border-bottom-color: var(--color-primary-light);
-    }
-    nav a:focus-visible {
-        outline: 2px solid var(--color-primary);
-        outline-offset: 4px;
-        border-radius: 4px;
-    }
-
-    /* === HERO SECTION DENGAN GRADIENT LEMBUT === */
-    .hero {
-        padding-block: var(--spacing-xl);
-        background: radial-gradient(circle at 10% 30%, rgba(11,95,165,0.03) 0%, rgba(255,255,255,0) 70%);
-    }
-    .hero-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: var(--spacing-lg);
-        align-items: center;
-    }
-    .hero-text p {
-        font-size: 1.05rem;
-    }
-    .hero-image img {
-        border-radius: 2rem;
-        box-shadow: var(--shadow-lg);
-        width: 100%;
-        height: auto;
-        background: var(--color-gray-100);
-        transition: transform 0.3s ease;
-    }
-    .hero-image figcaption {
-        font-size: 0.75rem;
-        text-align: center;
-        color: var(--color-gray-700);
-        margin-top: 0.5rem;
-    }
-    .btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        background: var(--color-primary);
-        color: white;
-        padding: 0.8rem 2rem;
-        border-radius: 60px;
-        text-decoration: none;
-        font-weight: 600;
-        margin-top: var(--spacing-md);
-        transition: all var(--transition-normal);
-        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        border: none;
-        cursor: pointer;
-    }
-    .btn:hover {
-        background: var(--color-primary-dark);
-        transform: translateY(-2px);
-        box-shadow: var(--shadow-md);
-    }
-    .btn:active {
-        transform: translateY(1px);
-    }
-
-    /* === CARD GRID & CARD PREMIUM === */
-    .card-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        gap: var(--spacing-lg);
-        margin-block: var(--spacing-lg);
-    }
-    .card {
-        background: white;
-        border-radius: var(--border-radius-card);
-        padding: var(--spacing-lg);
-        box-shadow: var(--shadow-sm);
-        transition: all var(--transition-normal);
-        border: 1px solid var(--color-gray-200);
-    }
-    .card:hover {
-        transform: translateY(-6px);
-        box-shadow: var(--shadow-hover);
-        border-color: var(--color-gray-300);
-    }
-    .card h3 {
-        margin-top: 0;
-    }
-    /* checklist style modern */
-    .check-list {
-        list-style: none;
-        padding-left: 0;
-    }
-    .check-list li {
-        padding-left: 1.8rem;
-        position: relative;
-        margin-bottom: var(--spacing-sm);
-    }
-    .check-list li::before {
-        content: "✓";
-        background: var(--color-secondary-light);
-        color: white;
-        font-weight: bold;
-        width: 1.25rem;
-        height: 1.25rem;
-        border-radius: 20px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 0.8rem;
-        position: absolute;
-        left: 0;
-        top: 0;
-    }
-
-    /* === LAYANAN DETAIL LIST === */
-    .layanan-list {
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing-md);
-        margin-top: var(--spacing-md);
-    }
-    .layanan-list article {
-        background: var(--color-gray-100);
-        padding: var(--spacing-md);
-        border-radius: 1.25rem;
-        transition: background var(--transition-fast);
-        border-left: 3px solid var(--color-primary-light);
-    }
-    .layanan-list article:hover {
-        background: white;
-        box-shadow: var(--shadow-sm);
-    }
-
-    /* === DETAILS / SYARAT (modern & readable) === */
-    details {
-        background: var(--color-gray-100);
-        border-radius: 1.5rem;
-        padding: var(--spacing-md);
-        margin-block: var(--spacing-md);
-        border: 1px solid var(--color-gray-200);
-        transition: background var(--transition-fast);
-    }
-    details[open] {
-        background: white;
-        box-shadow: var(--shadow-sm);
-    }
-    summary {
-        cursor: pointer;
-        font-size: 1.2rem;
-        padding: var(--spacing-xs);
-        font-weight: 600;
-        color: var(--color-primary-dark);
-    }
-    .terms-content {
-        margin-top: var(--spacing-md);
-        padding-top: var(--spacing-md);
-        border-top: 1px solid var(--color-gray-300);
-        font-size: 0.9rem;
-        max-height: 380px;
-        overflow-y: auto;
-    }
-
-    /* === SECTION SPACING === */
-    section {
-        padding-block: var(--spacing-lg);
-        border-bottom: 1px solid var(--color-gray-200);
-    }
-    section:last-of-type {
-        border-bottom: none;
-    }
-
-    /* === FOOTER PRO === */
-    footer {
-        background: var(--color-gray-100);
-        padding-block: var(--spacing-lg);
-        text-align: center;
-        font-size: 0.9rem;
-        border-top: 1px solid var(--color-gray-200);
-    }
-    address {
-        font-style: normal;
-        margin-bottom: var(--spacing-sm);
-    }
-    footer a {
-        color: var(--color-primary);
-        text-decoration: none;
-        font-weight: 500;
-    }
-    footer a:hover {
-        text-decoration: underline;
-    }
-
-    /* === RESPONSIVE (mobile-first & performa rendah) === */
-    @media (max-width: 48em) {
-        .hero-grid {
-            grid-template-columns: 1fr;
-            text-align: center;
-            gap: var(--spacing-md);
+        :root {
+            --primary: #0b5fa5;
+            --primary-dark: #08447a;
+            --secondary: #2c7a4d;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-700: #374151;
+            --gray-900: #111827;
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --radius-lg: 1.5rem;
+            --radius-md: 1rem;
         }
-        .hero-image {
-            order: -1;
-            max-width: 85%;
-            margin-inline: auto;
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            background: var(--gray-50);
+            color: var(--gray-900);
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.25rem;
+        }
+
+        /* header */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--gray-200);
+            z-index: 50;
         }
         .header-container {
-            flex-direction: row;
-        }
-        .mobile-nav-toggle {
-            display: block;
-        }
-        nav ul {
-            display: none;
-            flex-direction: column;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(8px);
-            padding: var(--spacing-md);
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.08);
-            gap: var(--spacing-md);
-            border-top: 1px solid var(--color-gray-200);
-        }
-        nav ul.show {
             display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 0;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--gray-900), var(--primary));
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .logo span {
+            color: var(--primary);
+            -webkit-text-fill-color: var(--primary);
+        }
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: var(--gray-700);
+        }
+        .nav-links a:hover { color: var(--primary); }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.75rem;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 1rem;
+                box-shadow: var(--shadow-md);
+                border-top: 1px solid var(--gray-200);
+            }
+            .nav-links.show {
+                display: flex;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+
+        /* hero ringkas */
+        .hero {
+            padding: 3rem 0 2rem;
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        .hero h1 {
+            font-size: clamp(1.8rem, 5vw, 2.8rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 0.75rem;
+        }
+        .hero-highlight {
+            color: var(--primary);
+        }
+        .hero p {
+            font-size: 1.05rem;
+            color: var(--gray-700);
+            margin-bottom: 1.25rem;
+        }
+        .hero-img {
+            border-radius: 1.5rem;
+            box-shadow: var(--shadow-md);
+            width: 100%;
+            height: auto;
+        }
+        .btn-primary {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 1.8rem;
+            border-radius: 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+            box-shadow: var(--shadow-sm);
+        }
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        @media (max-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-img {
+                max-width: 80%;
+                margin: 0 auto;
+            }
+        }
+
+        /* section umum */
+        section {
+            padding: 2.5rem 0;
+            border-bottom: 1px solid var(--gray-200);
         }
         h2 {
-            border-left: none;
-            border-bottom: 3px solid var(--color-primary);
-            padding-left: 0;
-            padding-bottom: var(--spacing-xs);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+            padding-left: 1rem;
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
         }
         .card {
-            padding: var(--spacing-md);
+            background: white;
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.2s;
+            border: 1px solid var(--gray-200);
         }
-    }
-
-    /* === AKSESIBILITAS & FOCUS RING === */
-    :focus-visible {
-        outline: 3px solid var(--color-primary);
-        outline-offset: 2px;
-        border-radius: 6px;
-    }
-
-    /* === PRINT STYLE (tetap bersih) === */
-    @media print {
-        header, .btn, nav, .mobile-nav-toggle, footer, .hero-image {
-            display: none;
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
         }
-        body {
-            font-size: 12pt;
-            color: black;
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-dark);
+        }
+
+        /* harga */
+        .price-badge {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 0.25rem 1rem;
+            border-radius: 2rem;
+            font-weight: 700;
+            margin-top: 0.75rem;
+        }
+        .price-range {
+            background: var(--gray-100);
+            padding: 1rem 1.5rem;
+            border-radius: var(--radius-md);
+            text-align: center;
+            margin: 1rem 0;
+        }
+        .price-range .big-price {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        /* testimoni dummy (bisa diganti) */
+        .testi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1rem;
+        }
+        .testi-card {
+            background: white;
+            border-radius: var(--radius-md);
+            padding: 1rem;
+            font-style: italic;
+            border-left: 3px solid var(--primary);
+        }
+
+        /* accordion FAQ */
+        .accordion {
+            background: white;
+            border-radius: var(--radius-md);
+            margin-bottom: 1rem;
+            border: 1px solid var(--gray-200);
+            overflow: hidden;
+        }
+        .accordion-header {
+            background: var(--gray-50);
+            padding: 1rem 1.25rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s;
+        }
+        .accordion-header:hover {
+            background: var(--gray-100);
+        }
+        .accordion-header::after {
+            content: "▼";
+            font-size: 0.8rem;
+            transition: transform 0.2s;
+        }
+        .accordion.active .accordion-header::after {
+            transform: rotate(180deg);
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 1.25rem;
             background: white;
         }
-        .card {
-            break-inside: avoid;
-            box-shadow: none;
-            border: 1px solid #ccc;
+        .accordion.active .accordion-content {
+            max-height: 300px;
+            padding: 0 1.25rem 1rem 1.25rem;
         }
-        a {
-            text-decoration: none;
-            color: black;
-        }
-    }
 
-    /* === PERFORMA TANPA ANIMASI BERAT === */
-    @media (prefers-reduced-motion: reduce) {
-        *,
-        *::before,
-        *::after {
-            animation-duration: 0.01ms !important;
-            transition-duration: 0.01ms !important;
-            scroll-behavior: auto !important;
+        /* sticky wa */
+        .sticky-wa {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            background: #25D366;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: transform 0.2s;
+            z-index: 100;
         }
-    }
+        .sticky-wa:hover {
+            transform: scale(1.05);
+        }
+        .sticky-wa svg {
+            width: 32px;
+            height: 32px;
+            fill: white;
+        }
+
+        footer {
+            background: var(--gray-100);
+            padding: 2rem 0;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+        @media (max-width: 640px) {
+            .container {
+                padding: 0 1rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
 
-<a href="#main-content" class="skip-to-content">Langsung ke konten utama</a>
-
 <header>
     <div class="container header-container">
         <div class="logo">⚡ WebInstal<span>Murah</span></div>
-        <button class="mobile-nav-toggle" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="primary-nav">☰</button>
-        <nav id="primary-nav" aria-label="Navigasi utama">
-            <ul>
-                <li><a href="#masalah">Masalah</a></li>
-                <li><a href="#layanan">Layanan</a></li>
-                <li><a href="#tentang-bisnis">Tentang</a></li>
-                <li><a href="#kontak">Kontak</a></li>
-            </ul>
-        </nav>
+        <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+        <ul class="nav-links">
+            <li><a href="#layanan">Layanan</a></li>
+            <li><a href="#harga">Harga</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+        </ul>
     </div>
 </header>
 
-<main id="main-content">
-    <!-- Hero + Gambar -->
-    <section class="hero" id="masalah">
+<main>
+    <!-- Hero singkat & engaging -->
+    <section class="hero">
         <div class="container hero-grid">
-            <div class="hero-text">
-                <h1>Punya Masalah Ini? <span>Kami Ada Solusinya.</span></h1>
-                <p>Anda ingin punya website sendiri, tapi selalu terhenti karena biaya hosting dan langganan tool premium yang mahal.</p>
-                <p>Anda ingin tampil profesional dengan link in bio, portfolio, atau landing page, tapi tidak mau ribet ngoding dari nol.</p>
-                <p>Anda sudah coba cari-cari template gratis, tapi bingung mana yang legal, mana yang aman, dan bagaimana cara memasangnya.</p>
-                <p><strong>Jika itu yang Anda rasakan, Anda berada di tempat yang tepat.</strong></p>
-                <a href="#cara-pesan" class="btn">Pesan Jasa Sekarang →</a>
+            <div>
+                <h1>Website Live Tanpa <span class="hero-highlight">Biaya Bulanan</span></h1>
+                <p>Deployment gratis di Netlify/Vercel. Kurasi kode legal. Instalasi murah. Mulai dari <strong>Rp150.000</strong>.</p>
+                <a href="https://wa.me/6281234567890?text=Halo%20WebInstalMurah,%20saya%20tertarik%20jasanya" class="btn-primary" target="_blank">💬 Pesan via WhatsApp →</a>
             </div>
-            <figure class="hero-image">
-                <img src="https://img-hub.netlify.app/main/itslyfe.webp" alt="Ilustrasi solusi website modern tanpa ribet" width="500" height="500" loading="eager" decoding="async">
-                <figcaption>Website profesional, biaya minimal</figcaption>
-            </figure>
+            <img class="hero-img" src="https://ing-hub.netlify.app/main/betterlyfe.webp" alt="Website profesional cepat" loading="eager">
         </div>
     </section>
 
-    <!-- Solusi Kami -->
-    <section class="solusi">
+    <!-- Layanan utama (ringkas) -->
+    <section id="layanan">
         <div class="container">
-            <h2>Solusi Kami</h2>
-            <p>Kami hadir untuk menjembatani keinginan Anda memiliki website profesional dengan kenyataan bahwa tidak semua orang perlu mengeluarkan uang ratusan ribu per bulan hanya untuk hosting dan template premium.</p>
-            <p>Kami percaya bahwa dengan memaksimalkan platform gratis yang sudah disediakan oleh Netlify, Vercel, dan Carrd, siapa pun bisa memiliki online presence yang memukau. Tugas kami adalah mewujudkannya untuk Anda, tanpa Anda perlu pusing memikirkan teknisnya.</p>
-        </div>
-    </section>
-
-    <!-- Apa yang Kami Jual? (5 layanan utama) -->
-    <section class="jual" id="layanan">
-        <div class="container">
-            <h2>Apa yang Kami Jual?</h2>
-            <p class="subtitle">Kami tidak menjual software. Kami menjual hasil kerja, keahlian, dan kenyamanan.</p>
+            <h2>⚡ Layanan Inti</h2>
             <div class="card-grid">
-                <article class="card">
-                    <h3>1. Jasa Deployment Website di Netlify & Vercel (Gratis)</h3>
-                    <p>Kami akan mengonlinekan website Anda menggunakan akun gratis Netlify atau Vercel. Paket gratis sudah cukup untuk website statis, landing page, atau link in bio. Akun dan kode sumber sepenuhnya milik Anda. <strong>Tanpa biaya bulanan.</strong></p>
-                </article>
-                <article class="card">
-                    <h3>2. Jasa Desain Halaman dengan Carrd (Free Plan)</h3>
-                    <p>Desain one-page elegan dengan Carrd versi gratis. Batasan free plan akan kami jelaskan sejak awal. Anda bisa upgrade ke Carrd Pro sendiri jika diperlukan.</p>
-                </article>
-                <article class="card">
-                    <h3>3. Jasa Kurasi Kode HTML & Template Gratis Berlisensi Resmi</h3>
-                    <p>Kami kurasi dari GitHub dan sumber terbuka dengan lisensi MIT, GPL, Apache, Creative Commons. Legal, aman, dan siap pakai. Anda tinggal pilih.</p>
-                </article>
-                <article class="card">
-                    <h3>4. Jasa Instalasi Kode</h3>
-                    <p>Punya kode hasil kurasi tapi tidak tahu cara memasangnya? Kami yang akan menginstal, mengkonfigurasi, dan menyesuaikan agar langsung berfungsi.</p>
-                </article>
-                <article class="card">
-                    <h3>5. Jasa Maintenance</h3>
-                    <p>Update, perbaikan kecil, penyesuaian kebutuhan. Anda fokus ke konten atau bisnis, kami urus teknisnya dengan biaya terjangkau.</p>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Kenapa Harus Memilih Kami -->
-    <section class="kenapa">
-        <div class="container">
-            <h2>Kenapa Harus Memilih Kami?</h2>
-            <ul class="check-list">
-                <li><strong>Hemat</strong> – Tidak perlu langganan hosting premium atau tool berbayar bulanan.</li>
-                <li><strong>Legal</strong> – Setiap kode memiliki lisensi resmi yang memperbolehkan penggunaan kembali.</li>
-                <li><strong>Akun jadi milik Anda</strong> – Kami tidak menyewakan atau menahan kredensial.</li>
-                <li><strong>Tanpa ngoding</strong> – Anda tinggal terima jadi, kami yang mengerjakan semua teknis.</li>
-            </ul>
-        </div>
-    </section>
-
-     <!-- Siapa yang Cocok & Cara Pesan -->
-    <section class="target">
-        <div class="container">
-            <h2>Siapa yang Cocok Menggunakan Jasa Kami?</h2>
-            <ul>
-                <li>Konten kreator yang ingin punya link in bio profesional</li>
-                <li>Freelancer yang butuh portfolio online cepat</li>
-                <li>Pebisnis kecil yang ingin landing page sederhana</li>
-                <li>Siapa pun yang ingin tampil online tanpa ribet dan mahal</li>
-            </ul>
-        </div>
-    </section>
-
-    <section class="cara-pesan" id="cara-pesan">
-        <div class="container">
-            <h2>Cara Pesan</h2>
-            <p>Hubungi kami melalui kontak di bawah. Ceritakan kebutuhan Anda, kami akan berikan rekomendasi solusi terbaiknya.</p>
-            <p><strong>Dari masalah jadi solusi. Dari ide jadi website live. Tanpa ribet, tanpa mahal.</strong></p>
-        </div>
-    </section>
-
-    <!-- Layanan Kami (detail lebih rinci) -->
-    <section class="layanan-detail">
-        <div class="container">
-            <h2>Layanan Kami</h2>
-            <p>Kami menyediakan layanan pembuatan website dan halaman online yang fokus pada kecepatan, kemudahan, dan biaya minimal. Semua memanfaatkan platform kelas gratis.</p>
-            <div class="layanan-list">
-                <article>
-                    <h3>Deployment di Netlify / Vercel (gratis)</h3>
-                    <p>Website live dengan domain standar, tanpa biaya bulanan. Cocok untuk statis, portfolio, landing page.</p>
-                </article>
-                <article>
-                    <h3>Desain dengan Carrd (free)</h3>
-                    <p>Halaman satu halaman elegan. Catatan: free plan memiliki batasan, kami informasikan transparan.</p>
-                </article>
-                <article>
-                    <h3>Pembuatan akun dengan nama user pilihan</h3>
-                    <p>Kami daftarkan akun Netlify/Vercel/Carrd sesuai keinginan Anda. Akses penuh diserahkan setelah selesai.</p>
-                </article>
-                <article>
-                    <h3>Jasa Kurasi Kode</h3>
-                    <p>Seleksi, uji, dokumentasi lisensi. Anda tidak perlu repot mencari sendiri.</p>
-                </article>
-                <article>
-                    <h3>Instalasi & Maintenance</h3>
-                    <p>Pasang, konfigurasi, dan perawatan berkala. Update dan perbaikan bug.</p>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tentang Bisnis Kami (konsep kurasi, legal, mengapa bayar) -->
-    <section class="tentang-bisnis" id="tentang-bisnis">
-        <div class="container">
-            <h2>Tentang Bisnis Kami</h2>
-            <article>
-                <h3>Apa yang Kami Jual?</h3>
-                <p>Kami tidak menjual kode. Kami menjual hasil kerja <strong>kurasi</strong>. Ibarat pustakawan yang menghabiskan waktu berjam-jam untuk mencari, menyeleksi, dan menguji aset gratis terbaik dari GitHub, WordPress.org, dan repositori open source. Anda membayar efisiensi, kenyamanan, dan kepercayaan bahwa semua sudah melalui proses seleksi.</p>
-                <p>Dari mana sumber kode? GitHub, WordPress.org, repositori open source dengan lisensi permisif (MIT, Apache, GPL, Creative Commons).</p>
-            </article>
-            <article>
-                <h3>Apakah Ini Legal?</h3>
-                <p>Ya, sepenuhnya legal. Kami hanya menyertakan kode dengan lisensi yang mengizinkan redistribusi. Kami patuh pada lisensi asli dan transparan mengenai hak cipta.</p>
-            </article>
-            <article>
-                <h3>Mengapa Harus Membayar Jika Gratis?</h3>
-                <ul>
-                    <li>Waktu Anda berharga – kami yang mencari dan memverifikasi.</li>
-                    <li>Kualitas terjamin – kami uji dan saring bug.</li>
-                    <li>Kepatuhan lisensi – kami dokumentasikan untuk Anda.</li>
-                    <li>Organisasi rapi – kode dikategorikan dan siap pakai.</li>
-                </ul>
-            </article>
-            <article>
-                <h3>Komitmen Kami</h3>
-                <ol>
-                    <li>Transparansi penuh – lisensi asli dicantumkan.</li>
-                    <li>Kurasi berkualitas – setiap aset diseleksi.</li>
-                    <li>Kepatuhan hukum – hanya aset dengan lisensi redistribusi.</li>
-                    <li>Pelayanan – siap menjawab pertanyaan lisensi.</li>
-                </ol>
-            </article>
-        </div>
-    </section>
-
-    <!-- Syarat dan Ketentuan (diringkas dalam details) -->
-    <section class="terms">
-        <div class="container">
-            <details>
-                <summary><strong>Syarat dan Ketentuan</strong> (klik untuk baca lengkap)</summary>
-                <div class="terms-content">
-                    <p><strong>Terakhir Diperbarui:</strong> 16 Mei 2026</p>
-                    <h4>1. Penerimaan Syarat</h4>
-                    <p>Dengan mengakses dan menggunakan NamaWebsiteAnda.com serta membeli produk digital, Anda menyetujui Syarat ini.</p>
-                    <h4>2. Definisi</h4>
-                    <p><strong>Kami</strong> merujuk pada penyedia produk digital hasil kurasi. <strong>Produk</strong> adalah file digital, paket kode, template. <strong>Aset Gratis</strong> adalah file yang tersedia publik di bawah lisensi redistribusi (GPL, MIT, dll).</p>
-                    <h4>3. Sifat Produk Kami</h4>
-                    <p>Kami tidak mengklaim kepemilikan atas aset individual. Anda membayar pekerjaan kurasi, pengorganisasian, dan dokumentasi.</p>
-                    <h4>4. Lisensi Masing-masing Aset</h4>
-                    <p>Setiap aset mempertahankan lisensi aslinya. Tanggung jawab Anda untuk mematuhi lisensi tersebut.</p>
-                    <h4>5. Hal yang Boleh Dilakukan</h4>
-                    <ul>
-                        <li>Menggunakan produk pada proyek tanpa batas (dengan mematuhi lisensi asli).</li>
-                        <li>Memodifikasi sesuai izin lisensi.</li>
-                        <li>Menjual kembali aset individu hanya jika lisensi memperbolehkan.</li>
-                    </ul>
-                    <h4>6. Hal yang Tidak Boleh Dilakukan</h4>
-                    <ul>
-                        <li>Mengklaim hak cipta atas aset gratis.</li>
-                        <li>Melisensikan ulang aset.</li>
-                        <li>Menjual koleksi kurasi sebagai milik sendiri tanpa izin tertulis.</li>
-                    </ul>
-                    <h4>7. Tanpa Garansi</h4>
-                    <p>Produk disediakan "apa adanya". Kami tidak menjamin bebas error atau sesuai kebutuhan spesifik Anda.</p>
-                    <h4>8. Batasan Tanggung Jawab</h4>
-                    <p>Kami tidak bertanggung jawab atas kerusakan langsung/tidak langsung.</p>
-                    <h4>9. Pengembalian Dana</h4>
-                    <p>Karena sifat digital, semua penjualan bersifat final.</p>
-                    <h4>10. Ganti Rugi</h4>
-                    <p>Anda setuju mengganti rugi jika melanggar syarat atau lisensi asli.</p>
-                    <h4>11. Perubahan Syarat</h4>
-                    <p>Perubahan akan diposting di halaman ini.</p>
-                    <h4>12. Kontak</h4>
-                    <p>Email: <a href="mailto:emailanda@email.com">emailanda@email.com</a></p>
+                <div class="card">
+                    <h3>🚀 Deployment Gratis</h3>
+                    <p>Onlinekan website di Netlify/Vercel. Domain standar, tanpa biaya bulanan. Akun milik Anda.</p>
                 </div>
-            </details>
+                <div class="card">
+                    <h3>📦 Kurasi Kode Legal</h3>
+                    <p>Template & kode dari GitHub berlisensi MIT/GPL. Legal, aman, tinggal pakai.</p>
+                </div>
+                <div class="card">
+                    <h3>🔧 Instalasi + Maintenance</h3>
+                    <p>Kami pasang & sesuaikan. Maintenance ringan tersedia. Fokus ke bisnis Anda.</p>
+                </div>
+            </div>
         </div>
     </section>
+
+    <!-- Harga jelas (range) -->
+    <section id="harga">
+        <div class="container">
+            <h2>💰 Mulai dari Rp150.000</h2>
+            <div class="price-range">
+                <p class="big-price">Rp150.000 – Rp350.000</p>
+                <p>Harga tergantung kompleksitas & layanan tambahan. Konsultasi gratis via WhatsApp.</p>
+                <a href="https://wa.me/6281234567890?text=Halo,%20saya%20butuh%20website%20dengan%20range%20harga%20Rp150-350rb" class="btn-primary" style="margin-top: 0.75rem;" target="_blank">Tanya Harga Pasti →</a>
+            </div>
+            <div class="card-grid" style="margin-top: 1rem;">
+                <div class="card">
+                    <h3>Paket Basic</h3>
+                    <p>Deploy template siap pakai + akun Netlify.</p>
+                    <div class="price-badge">~150k</div>
+                </div>
+                <div class="card">
+                    <h3>Paket Kurasi</h3>
+                    <p>Pilih template + kurasi legal + instalasi.</p>
+                    <div class="price-badge">~250k</div>
+                </div>
+                <div class="card">
+                    <h3>Paket Complete</h3>
+                    <p>Semua layanan + maintenance 1 bulan.</p>
+                    <div class="price-badge">~350k</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimoni dummy (bisa diganti nanti) -->
+    <section>
+        <div class="container">
+            <h2>📢 Yang Bilang</h2>
+            <div class="testi-grid">
+                <div class="testi-card">“Proses cepat, hasil rapi. Akun diserahkan penuh. Rekomended!” — <strong>Andi (UKM)</strong></div>
+                <div class="testi-card">“Gak perlu pusing hosting bulanan, deploy langsung live. Makasih WebInstalMurah.” — <strong>Sinta (Freelance)</strong></div>
+                <div class="testi-card">“Pertama kali bikin website, dibantu step by step. Worth it!” — <strong>Rizky (Content Creator)</strong></div>
+            </div>
+            <p class="gray-text" style="font-size: 0.8rem; margin-top: 0.5rem;">*Testimoni sementara, Anda bisa ganti nanti di GitHub.</p>
+        </div>
+    </section>
+
+    <!-- Accordion FAQ di bagian bawah -->
+    <section id="faq">
+        <div class="container">
+            <h2>❓ Pertanyaan Umum</h2>
+            <div class="accordion">
+                <div class="accordion-header">Apakah saya bisa pakai domain sendiri?</div>
+                <div class="accordion-content">Tentu. Beli domain sendiri (Niagahoster, Cloudflare, dll) lalu arahkan ke Netlify/Vercel. Kami bantu setting jika perlu.</div>
+            </div>
+            <div class="accordion">
+                <div class="accordion-header">Apakah ada biaya bulanan setelah website live?</div>
+                <div class="accordion-content">Tidak. Netlify dan Vercel punya free tier yang cukup untuk website statis, portfolio, landing page. Anda tidak perlu bayar hosting apapun.</div>
+            </div>
+            <div class="accordion">
+                <div class="accordion-header">Legal? Kodenya dari mana?</div>
+                <div class="accordion-content">Kami hanya kurasi dari repositori open source dengan lisensi MIT, GPL, Apache. Legal dan aman. Lisensi asli tetap tercantum.</div>
+            </div>
+            <div class="accordion">
+                <div class="accordion-header">Berapa lama proses pengerjaan?</div>
+                <div class="accordion-content">Biasanya 1-2 hari kerja tergantung kompleksitas dan respons dari Anda. Cepat untuk paket basic.</div>
+            </div>
+            <div class="accordion">
+                <div class="accordion-header">Bagaimana cara pesan?</div>
+                <div class="accordion-content">Klik tombol WhatsApp di pojok kanan atau di hero. Nanti kami bantu diskusi kebutuhan Anda.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontak singkat + footer -->
+    <footer id="kontak">
+        <div class="container">
+            <p>📧 Hubungi: <a href="https://wa.me/6281234567890" target="_blank" style="color: var(--primary);">WhatsApp (klik)</a> | @webinstalmurah</p>
+            <p style="margin-top: 0.5rem;">© 2026 WebInstalMurah — Jasa website tanpa ribet & bulanan. Gambar placeholder dari ing-hub.netlify.app</p>
+            <p style="font-size: 0.7rem;">*Testimoni bersifat ilustrasi, bisa diganti sendiri.</p>
+        </div>
+    </footer>
 </main>
 
-<footer id="kontak">
-    <div class="container">
-        <address>
-            Hubungi kami: <a href="mailto:emailanda@email.com">emailanda@email.com</a><br>
-            atau media sosial @webinstalmurah
-        </address>
-        <p>&copy; 2026 WebInstalMurah. Hasil kurasi legal, bebas ribet.</p>
-    </div>
-</footer>
+<!-- Sticky tombol WA (blank, nanti ganti nomor) -->
+<a href="https://wa.me/6281234567890?text=Halo%20WebInstalMurah,%20saya%20tertarik%20jasanya" class="sticky-wa" target="_blank" aria-label="Chat WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M12.031 2.016c-5.484 0-9.984 4.5-9.984 9.984 0 1.828 0.516 3.516 1.359 4.969l-1.406 5.016 5.156-1.406c1.406 0.797 3 1.219 4.875 1.219 5.484 0 9.984-4.5 9.984-9.984s-4.5-9.984-9.984-9.984zM12.031 21.984c-1.5 0-2.953-0.375-4.219-1.078l-0.328-0.188-3.094 0.844 0.844-3.094-0.188-0.328c-0.75-1.266-1.125-2.719-1.125-4.219 0-4.641 3.797-8.438 8.438-8.438s8.438 3.797 8.438 8.438-3.797 8.438-8.438 8.438zM17.016 13.688c-0.281-0.141-1.641-0.797-1.875-0.891s-0.469-0.141-0.656 0.141-0.797 0.891-0.984 1.078c-0.141 0.141-0.328 0.188-0.609 0.047-0.281-0.141-1.172-0.422-2.25-1.359-0.844-0.75-1.406-1.688-1.594-1.969-0.188-0.281-0.047-0.469 0.141-0.609 0.141-0.141 0.328-0.422 0.469-0.563 0.141-0.141 0.188-0.281 0.281-0.469 0.094-0.188 0.047-0.328-0.047-0.469s-0.656-1.547-0.891-2.109c-0.234-0.563-0.469-0.469-0.656-0.469h-0.563c-0.188 0-0.516 0.094-0.797 0.422-0.281 0.328-1.078 1.078-1.078 2.578s1.078 2.953 1.219 3.141c0.141 0.188 2.063 3.234 5.016 4.5 0.703 0.281 1.266 0.469 1.688 0.609 0.703 0.234 1.359 0.188 1.875 0.141 0.563-0.047 1.734-0.703 1.969-1.359s0.234-1.266 0.141-1.359c-0.094-0.141-0.328-0.188-0.609-0.328z"/></svg>
+</a>
 
 <script>
-    (function() {
-        // Pastikan DOM stabil dan performa ringan
-        document.addEventListener("DOMContentLoaded", function() {
-            // Smooth scroll + update url + tutup mobile menu setelah klik
-            const allLinks = document.querySelectorAll('a[href^="#"]');
-            const mobileToggle = document.querySelector(".mobile-nav-toggle");
-            const navMenu = document.querySelector("nav ul");
-            
-            function closeMobileMenu() {
-                if (navMenu && navMenu.classList.contains("show")) {
-                    navMenu.classList.remove("show");
-                    if (mobileToggle) {
-                        mobileToggle.setAttribute("aria-expanded", "false");
-                        mobileToggle.innerHTML = "☰";
-                    }
-                }
-            }
-            
-            // Event untuk anchor link
-            allLinks.forEach(link => {
-                link.addEventListener("click", function(e) {
-                    const targetId = this.getAttribute("href");
-                    if (targetId === "#" || !targetId) return;
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        e.preventDefault();
-                        targetElement.scrollIntoView({
-                            behavior: "smooth",
-                            block: "start"
-                        });
-                        history.pushState(null, null, targetId);
-                        closeMobileMenu(); // tutup menu jika terbuka (mobile)
-                    }
-                });
-            });
-            
-            // Mobile nav toggle dengan ganti icon
-            if (mobileToggle && navMenu) {
-                mobileToggle.addEventListener("click", function() {
-                    const expanded = mobileToggle.getAttribute("aria-expanded") === "true" ? false : true;
-                    mobileToggle.setAttribute("aria-expanded", expanded);
-                    navMenu.classList.toggle("show");
-                    // ubah ikon antara ☰ dan ✖
-                    mobileToggle.innerHTML = expanded ? "✖" : "☰";
-                });
-                
-                // Tutup menu jika resize ke desktop (>= 48em)
-                window.addEventListener("resize", function() {
-                    if (window.innerWidth >= 768) { // 48em = 768px
-                        if (navMenu.classList.contains("show")) {
-                            navMenu.classList.remove("show");
-                            if (mobileToggle) {
-                                mobileToggle.setAttribute("aria-expanded", "false");
-                                mobileToggle.innerHTML = "☰";
-                            }
-                        }
-                    }
-                });
-            }
-            
-            // Opsional: tambahkan handling untuk menutup menu saat klik di luar (meningkatkan UX)
-            document.addEventListener("click", function(event) {
-                if (navMenu && navMenu.classList.contains("show")) {
-                    const isClickInsideNav = navMenu.contains(event.target);
-                    const isToggleClick = mobileToggle && mobileToggle.contains(event.target);
-                    if (!isClickInsideNav && !isToggleClick) {
-                        closeMobileMenu();
-                    }
-                }
-            });
+    // mobile menu toggle
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    if (menuBtn) {
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+            menuBtn.textContent = navLinks.classList.contains('show') ? '✖' : '☰';
         });
-    })();
+    }
+
+    // Accordion logic
+    const accordions = document.querySelectorAll('.accordion');
+    accordions.forEach(acc => {
+        const header = acc.querySelector('.accordion-header');
+        header.addEventListener('click', () => {
+            acc.classList.toggle('active');
+            // optional: close others? biar simple, bisa buka banyak. Tapi lebih user friendly kalau hanya satu? biar ringkas tidak usah.
+        });
+    });
+
+    // smooth scroll untuk anchor
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            const target = document.querySelector(targetId);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                // tutup mobile menu jika terbuka
+                if (navLinks.classList.contains('show')) {
+                    navLinks.classList.remove('show');
+                    menuBtn.textContent = '☰';
+                }
+            }
+        });
+    });
 </script>
 </body>
 </html>
