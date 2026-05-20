@@ -21,21 +21,21 @@
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
       background: #ffffff;
       color: #1a1a1a;
-      line-height: 1.5;
+      line-height: 1.65;  /* lebih lapang */
       font-size: clamp(0.95rem, 3.5vw, 1rem);
       opacity: 0;
       transition: opacity 0.2s ease;
     }
     body.loaded { opacity: 1; }
 
-    /* Container responsif */
+    /* Container lebih lega di HP */
     .container {
       max-width: 860px;
       margin: 0 auto;
-      padding: 0 clamp(1rem, 4vw, 2rem);
+      padding: 0 clamp(1rem, 5vw, 2rem);
     }
 
-    /* Header tanpa border-bottom, logo pakai Newsreader */
+    /* Header tanpa border-bottom, logo Newsreader */
     .site-header {
       display: flex;
       justify-content: space-between;
@@ -59,22 +59,21 @@
       border-bottom: 1px dotted #aaa;
     }
 
-    /* tipografi heading */
+    /* Tipografi heading dengan spasi lebih besar */
     h1 {
       font-family: 'Newsreader', Georgia, serif;
       font-size: clamp(1.8rem, 7vw, 3rem);
       font-weight: 500;
-      margin: clamp(1.5rem, 6vw, 2.5rem) 0 1rem;
+      margin: clamp(2rem, 8vw, 3rem) 0 1.2rem;
       line-height: 1.2;
       text-align: center;
-      letter-spacing: -0.01em;
     }
     h2 {
       font-family: 'Inter', sans-serif;
       font-size: clamp(1rem, 4vw, 1.3rem);
       font-weight: 400;
       color: #2c2c2c;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.5rem;
       text-align: center;
       max-width: 650px;
       margin-left: auto;
@@ -83,7 +82,7 @@
     .hero-img {
       width: 100%;
       border-radius: 24px;
-      margin: clamp(1.5rem, 5vw, 2rem) 0;
+      margin: clamp(1.8rem, 6vw, 2.5rem) 0;
       background: #f0f0f0;
       aspect-ratio: 16/9;
       object-fit: cover;
@@ -91,14 +90,14 @@
     }
     .cta-primary {
       text-align: center;
-      margin: 1.5rem 0 2rem;
+      margin: 2rem 0 2.5rem;
     }
     .btn-wa {
       display: inline-block;
       background-color: #000;
       color: white;
       font-weight: 500;
-      padding: 0.7rem 1.8rem;
+      padding: 0.8rem 2rem;
       border-radius: 60px;
       text-decoration: none;
       font-size: clamp(0.9rem, 3.5vw, 1rem);
@@ -113,16 +112,16 @@
     /* filter tabs */
     .filter-tabs {
       display: flex;
-      gap: 0.6rem;
+      gap: 0.75rem;
       overflow-x: auto;
-      padding-bottom: 0.6rem;
-      margin: 1.8rem 0 1.8rem;
+      padding-bottom: 0.75rem;
+      margin: 2rem 0 2.2rem;
       scrollbar-width: thin;
     }
     .filter-btn {
       font-family: 'Inter', sans-serif;
       font-size: 0.8rem;
-      padding: 0.4rem 1.2rem;
+      padding: 0.5rem 1.3rem;
       border-radius: 40px;
       border: 1px solid #ddd;
       background: white;
@@ -137,15 +136,15 @@
       border-color: #000;
     }
 
-    /* product list */
+    /* Product list dengan spacing lebih longgar */
     .product-list {
       list-style: none;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
     }
     .product-item {
       border-bottom: 1px solid #efefef;
-      margin-bottom: 1.2rem;
-      padding-bottom: 1rem;
+      margin-bottom: clamp(1.5rem, 4vw, 2rem);
+      padding-bottom: clamp(1rem, 3vw, 1.5rem);
     }
     .hidden-item { display: none; }
 
@@ -158,7 +157,7 @@
       border: none;
       font-family: 'Inter', sans-serif;
       cursor: pointer;
-      padding: 0.4rem 0;
+      padding: 0.5rem 0;
       text-align: left;
     }
     .link-container span:first-child {
@@ -167,17 +166,19 @@
       font-size: clamp(1rem, 4vw, 1.2rem);
       color: #111;
     }
+    /* Harga dummy dengan background abu muda */
     .meta {
-      font-size: 0.7rem;
-      color: #777;
-      background: #f2f2f2;
-      padding: 0.15rem 0.6rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #1a1a1a;
+      background: #f0f0f0;
+      padding: 0.2rem 0.7rem;
       border-radius: 30px;
     }
     .item-details {
       display: none;
-      margin-top: 1rem;
-      padding-top: 0.8rem;
+      margin-top: 1.2rem;
+      padding-top: 1rem;
       border-top: 1px solid #ececec;
       animation: fadeIn 0.2s ease;
     }
@@ -185,7 +186,7 @@
     .product-img {
       width: 100%;
       border-radius: 20px;
-      margin-bottom: 0.8rem;
+      margin-bottom: 1rem;
       background: #f5f5f5;
       aspect-ratio: 16/9;
       object-fit: cover;
@@ -193,20 +194,30 @@
     .details-desc {
       font-size: 0.9rem;
       color: #333;
-      margin-bottom: 0.8rem;
+      margin-bottom: 1rem;
       line-height: 1.5;
     }
+    /* Action links dengan border abu-abu (tombol kecil) */
     .action-row {
       display: flex;
-      gap: 1.2rem;
+      gap: 1rem;
       flex-wrap: wrap;
     }
     .action-link {
-      color: #000;
+      display: inline-block;
+      padding: 0.3rem 1rem;
+      border: 1px solid #ccc;
+      border-radius: 40px;
+      background: white;
       text-decoration: none;
-      font-weight: 500;
+      color: #222;
       font-size: 0.75rem;
-      border-bottom: 1px solid #ccc;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .action-link:hover {
+      background: #f5f5f5;
+      border-color: #999;
     }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(-4px); }
@@ -215,12 +226,12 @@
 
     .load-more {
       text-align: center;
-      margin: 1rem 0 2rem;
+      margin: 2rem 0 2.5rem;
     }
     .load-more-btn {
       background: transparent;
       border: 1px solid #ccc;
-      padding: 0.5rem 1.8rem;
+      padding: 0.6rem 2rem;
       border-radius: 60px;
       font-family: 'Inter', sans-serif;
       font-size: 0.85rem;
@@ -232,70 +243,68 @@
       background: #fafafa;
     }
 
-    /* Info cards (layanan) – lebih ramping & fleksibel */
+    /* Info cards (layanan) dengan spasi lega */
     .info-card {
       background: #fafafa;
-      border-radius: 24px;
-      padding: clamp(1.2rem, 4vw, 1.8rem);
-      margin: 2rem 0;
+      border-radius: 28px;
+      padding: clamp(1.5rem, 5vw, 2rem);
+      margin: clamp(2rem, 6vw, 3rem) 0;
       border: 1px solid #eaeaea;
     }
     .info-card h3 {
       font-family: 'Newsreader', serif;
       font-size: clamp(1.3rem, 5vw, 1.7rem);
       font-weight: 500;
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
       text-align: center;
     }
     .grid-services {
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
-      margin: 1.5rem 0 1rem;
+      gap: 1.2rem;
+      margin: 1.8rem 0 1rem;
       justify-content: center;
     }
     .service {
       background: white;
-      padding: 0.9rem;
+      padding: 1rem;
       border-radius: 20px;
-      flex: 1 1 160px;
+      flex: 1 1 170px;
       text-align: center;
       border: 1px solid #e2e2e2;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
     }
     .service strong {
       display: block;
       font-size: 0.9rem;
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.25rem;
     }
     .service p {
       font-size: 0.75rem;
       color: #555;
-      line-height: 1.3;
     }
     .why-list {
       text-align: left;
-      max-width: 500px;
-      margin: 1rem auto;
+      max-width: 550px;
+      margin: 1.2rem auto;
       padding-left: 1.2rem;
     }
     .why-list li {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.6rem;
       font-size: 0.9rem;
     }
     .license-note {
       font-size: 0.8rem;
       background: #fff3e0;
-      padding: 0.8rem;
-      border-radius: 18px;
-      margin-top: 1rem;
+      padding: 0.9rem;
+      border-radius: 20px;
+      margin-top: 1.2rem;
     }
     details {
       background: white;
       border: 1px solid #e0e0e0;
-      border-radius: 18px;
-      padding: 0.8rem;
-      margin-top: 1rem;
+      border-radius: 20px;
+      padding: 1rem;
+      margin-top: 1.2rem;
     }
     summary {
       font-weight: 500;
@@ -306,12 +315,12 @@
       text-align: center;
       font-size: 0.7rem;
       color: #888;
-      margin: 2.5rem 0 1.5rem;
+      margin: 3rem 0 2rem;
       border-top: 1px solid #eee;
-      padding-top: 1.2rem;
+      padding-top: 1.5rem;
     }
     @media (max-width: 560px) {
-      .grid-services { gap: 0.8rem; }
+      .grid-services { gap: 1rem; }
       .service { flex-basis: 100%; }
     }
   </style>
@@ -343,92 +352,91 @@
     </div>
 
     <ul class="product-list" id="productList">
-      <!-- total 10 produk agar load more muncul -->
+      <!-- 10 produk, label meta diganti harga dummy, action link dengan border abu -->
       <li data-category="one-page" class="product-item">
-        <button class="link-container" aria-expanded="false"><span>Betterlyfe</span><span class="meta">HTML</span></button>
+        <button class="link-container" aria-expanded="false"><span>Betterlyfe</span><span class="meta">Rp 199k</span></button>
         <div class="item-details">
           <img src="https://placehold.co/600x400/EEE/333?text=Preview+Betterlyfe" class="product-img" alt="preview">
           <div class="details-desc">Fleksibel, atur produk sendiri, setiap produk bisa link WA dengan pesan custom. Cocok untuk usaha dengan banyak varian.</div>
-          <div class="action-row"><a href="https://betterlyfe.netlify.app" class="action-link" target="_blank">Demo</a><a href="https://wa.me/6285155308288?text=saya%20mau%20pesan%20betterlyfe" class="action-link">Pesan via WA</a></div>
+          <div class="action-row"><a href="https://betterlyfe.netlify.app" class="action-link" target="_blank">Demo</a><a href="https://wa.me/6285155308288?text=saya%20mau%20pesan%20betterlyfe" class="action-link">WhatsApp</a></div>
         </div>
       </li>
       <li data-category="link-in-bio" class="product-item">
-        <button class="link-container" aria-expanded="false"><span>Nitrate</span><span class="meta">Link in bio</span></button>
+        <button class="link-container" aria-expanded="false"><span>Nitrate</span><span class="meta">Rp 149k</span></button>
         <div class="item-details">
           <img src="https://placehold.co/600x400/EEE/333?text=Nitrate+Preview" class="product-img">
           <div class="details-desc">Minimalis, mode gelap/terang. Pas untuk bio Instagram yang bersih dan profesional.</div>
-          <div class="action-row"><a href="https://nitrate.netlify.app" class="action-link">Demo</a><a href="https://wa.me/6285155308288?text=saya%20mau%20pesan%20nitrate" class="action-link">Pesan</a></div>
+          <div class="action-row"><a href="https://nitrate.netlify.app" class="action-link" target="_blank">Demo</a><a href="https://wa.me/6285155308288?text=saya%20mau%20pesan%20nitrate" class="action-link">WhatsApp</a></div>
         </div>
       </li>
       <li data-category="one-page" class="product-item">
-        <button class="link-container" aria-expanded="false"><span>Kertas</span><span class="meta">One page</span></button>
+        <button class="link-container" aria-expanded="false"><span>Kertas</span><span class="meta">Rp 99k</span></button>
         <div class="item-details">
           <img src="https://placehold.co/600x400/EEE/333?text=Kertas+Demo" class="product-img">
           <div class="details-desc">Halaman sangat minimalis, cocok untuk personal branding atau portofolio sederhana.</div>
-          <div class="action-row"><a href="https://kertasdotio.netlify.app" class="action-link">Demo</a><a href="https://wa.me/6285155308288?text=saya%20mau%20pesan%20kertas" class="action-link">Pesan</a></div>
+          <div class="action-row"><a href="https://kertasdotio.netlify.app" class="action-link" target="_blank">Demo</a><a href="https://wa.me/6285155308288?text=saya%20mau%20pesan%20kertas" class="action-link">WhatsApp</a></div>
         </div>
       </li>
       <li data-category="store" class="product-item">
-        <button class="link-container" aria-expanded="false"><span>Kelontong</span><span class="meta">Store</span></button>
+        <button class="link-container" aria-expanded="false"><span>Kelontong</span><span class="meta">Rp 250k</span></button>
         <div class="item-details">
           <img src="https://placehold.co/600x400/EEE/333?text=Kelontong+Store" class="product-img">
           <div class="details-desc">Tampilan toko kecil dengan produk unggulan. Cocok untuk UKM.</div>
-          <div class="action-row"><a href="https://kelontong.netlify.app" class="action-link">Demo</a><a href="https://wa.me/6285155308288?text=saya%20mau%20pesan%20kelontong" class="action-link">Pesan</a></div>
+          <div class="action-row"><a href="https://kelontong.netlify.app" class="action-link" target="_blank">Demo</a><a href="https://wa.me/6285155308288?text=saya%20mau%20pesan%20kelontong" class="action-link">WhatsApp</a></div>
         </div>
       </li>
       <li data-category="one-page" class="product-item">
-        <button class="link-container" aria-expanded="false"><span>Explainedby</span><span class="meta">Storytelling</span></button>
+        <button class="link-container" aria-expanded="false"><span>Explainedby</span><span class="meta">Rp 129k</span></button>
         <div class="item-details">
           <img src="https://placehold.co/600x400/EEE/333?text=Explainedby" class="product-img">
           <div class="details-desc">Link-in-bio dengan cerita personal. Bagus membangun kepercayaan audiens.</div>
-          <div class="action-row"><a href="https://explainedby.carrd.co" class="action-link">Demo</a><a href="https://wa.me/6285155308288?text=saya%20mau%20pesan%20explainedby" class="action-link">Pesan</a></div>
+          <div class="action-row"><a href="https://explainedby.carrd.co" class="action-link" target="_blank">Demo</a><a href="https://wa.me/6285155308288?text=saya%20mau%20pesan%20explainedby" class="action-link">WhatsApp</a></div>
         </div>
       </li>
       <li data-category="card" class="product-item">
-        <button class="link-container" aria-expanded="false"><span>Cardpro</span><span class="meta">Kartu Nama</span></button>
+        <button class="link-container" aria-expanded="false"><span>Cardpro</span><span class="meta">Rp 99k</span></button>
         <div class="item-details">
           <img src="https://placehold.co/600x400/EEE/333?text=Cardpro" class="product-img">
           <div class="details-desc">Kartu nama online modern: intro, kontak, porto kecil. Ideal freelancer.</div>
-          <div class="action-row"><a href="https://cardpro.carrd.co" class="action-link">Demo</a><a href="https://wa.me/6285155308288?text=saya%20mau%20pesan%20cardpro" class="action-link">Pesan</a></div>
+          <div class="action-row"><a href="https://cardpro.carrd.co" class="action-link" target="_blank">Demo</a><a href="https://wa.me/6285155308288?text=saya%20mau%20pesan%20cardpro" class="action-link">WhatsApp</a></div>
         </div>
       </li>
-      <!-- tambahan 4 produk agar total 10 -->
       <li data-category="one-page" class="product-item">
-        <button class="link-container" aria-expanded="false"><span>Pizzariaa</span><span class="meta">One page</span></button>
+        <button class="link-container" aria-expanded="false"><span>Pizzariaa</span><span class="meta">Rp 189k</span></button>
         <div class="item-details">
           <img src="https://placehold.co/600x400/EEE/333?text=Pizzariaa" class="product-img">
           <div class="details-desc">Untuk industri rumahan makanan, setiap produk dilengkapi bahan dan CTA.</div>
-          <div class="action-row"><a href="https://pizzariaa.carrd.co" class="action-link">Demo</a><a href="https://wa.me/6285155308288?text=saya%20mau%20pesan%20pizzariaa" class="action-link">Pesan</a></div>
+          <div class="action-row"><a href="https://pizzariaa.carrd.co" class="action-link" target="_blank">Demo</a><a href="https://wa.me/6285155308288?text=saya%20mau%20pesan%20pizzariaa" class="action-link">WhatsApp</a></div>
         </div>
       </li>
       <li data-category="one-page" class="product-item">
-        <button class="link-container" aria-expanded="false"><span>Tokokopi</span><span class="meta">One page</span></button>
+        <button class="link-container" aria-expanded="false"><span>Tokokopi</span><span class="meta">Rp 119k</span></button>
         <div class="item-details">
           <img src="https://placehold.co/600x400/EEE/333?text=Tokokopi" class="product-img">
           <div class="details-desc">Halaman sederhana untuk promosi toko: intro, produk, CTA. Singkat tapi jelas.</div>
-          <div class="action-row"><a href="https://tokokopi.carrd.co" class="action-link">Demo</a><a href="https://wa.me/6285155308288?text=saya%20mau%20pesan%20tokokopi" class="action-link">Pesan</a></div>
+          <div class="action-row"><a href="https://tokokopi.carrd.co" class="action-link" target="_blank">Demo</a><a href="https://wa.me/6285155308288?text=saya%20mau%20pesan%20tokokopi" class="action-link">WhatsApp</a></div>
         </div>
       </li>
       <li data-category="link-in-bio" class="product-item">
-        <button class="link-container" aria-expanded="false"><span>Reallyformal</span><span class="meta">Resume</span></button>
+        <button class="link-container" aria-expanded="false"><span>Reallyformal</span><span class="meta">Rp 159k</span></button>
         <div class="item-details">
           <img src="https://placehold.co/600x400/EEE/333?text=Reallyformal" class="product-img">
           <div class="details-desc">One page sebagai resume online. Pas untuk networking atau cari kerja remote.</div>
-          <div class="action-row"><a href="https://reallyformal.carrd.co" class="action-link">Demo</a><a href="https://wa.me/6285155308288?text=saya%20mau%20pesan%20reallyformal" class="action-link">Pesan</a></div>
+          <div class="action-row"><a href="https://reallyformal.carrd.co" class="action-link" target="_blank">Demo</a><a href="https://wa.me/6285155308288?text=saya%20mau%20pesan%20reallyformal" class="action-link">WhatsApp</a></div>
         </div>
       </li>
       <li data-category="card" class="product-item">
-        <button class="link-container" aria-expanded="false"><span>Ngopislur</span><span class="meta">One page</span></button>
+        <button class="link-container" aria-expanded="false"><span>Ngopislur</span><span class="meta">Rp 139k</span></button>
         <div class="item-details">
           <img src="https://placehold.co/600x400/EEE/333?text=Ngopislur" class="product-img">
           <div class="details-desc">Tampilan lebih formal, cocok bisnis skala menengah ingin kesan profesional.</div>
-          <div class="action-row"><a href="https://ngopislur.carrd.co" class="action-link">Demo</a><a href="https://wa.me/6285155308288?text=saya%20mau%20pesan%20ngopislur" class="action-link">Pesan</a></div>
+          <div class="action-row"><a href="https://ngopislur.carrd.co" class="action-link" target="_blank">Demo</a><a href="https://wa.me/6285155308288?text=saya%20mau%20pesan%20ngopislur" class="action-link">WhatsApp</a></div>
         </div>
       </li>
     </ul>
     <div class="load-more"><button class="load-more-btn" id="loadMoreBtn">Tampilkan lebih banyak →</button></div>
 
-    <!-- Layanan & Jasa (card lebih ramping) -->
+    <!-- Layanan & Jasa -->
     <div class="info-card">
       <h3>📦 Layanan & Jasa Kami</h3>
       <div class="grid-services">
@@ -437,7 +445,7 @@
         <div class="service"><strong>🔍 Kurasi Kode (GitHub, WP)</strong><p>Template legal lisensi MIT/GPL</p></div>
         <div class="service"><strong>⚙️ Instalasi & Maintenance</strong><p>Setup kode, instalasi plugin, konfigurasi</p></div>
       </div>
-      <p style="text-align:center; font-size:0.85rem;"><strong>Kenapa kami?</strong> Hemat biaya, akun milik Anda, legal, tanpa ribet ngoding.</p>
+      <p style="text-align:center; font-size:0.85rem; margin-top:0.5rem;"><strong>Kenapa kami?</strong> Hemat biaya, akun milik Anda, legal, tanpa ribet ngoding.</p>
     </div>
 
     <div class="info-card">
@@ -453,7 +461,7 @@
         <li>✓ Pebisnis kecil yang ingin landing page sederhana & efektif</li>
         <li>✓ Siapa pun yang ingin tampil profesional di internet tanpa ribet & mahal</li>
       </ul>
-      <div class="cta-primary" style="margin: 0.5rem 0 0;">
+      <div class="cta-primary" style="margin: 1rem 0 0;">
         <a href="https://wa.me/+6285155308288" class="btn-wa">🎯 Saya tertarik, hubungi sekarang</a>
       </div>
     </div>
@@ -476,7 +484,7 @@
       </details>
     </div>
 
-    <div class="cta-primary" style="margin: 0.5rem 0 2rem;">
+    <div class="cta-primary" style="margin: 0.5rem 0 2.5rem;">
       <a href="https://wa.me/+6285155308288" class="btn-wa">💬 Konsultasi & Order via WhatsApp</a>
     </div>
   </main>
@@ -502,11 +510,13 @@
       const filtered = items.filter(item => currentFilter === 'all' || item.dataset.category === currentFilter);
       items.forEach(item => item.classList.add('hidden-item'));
       filtered.slice(0, currentCount).forEach(item => item.classList.remove('hidden-item'));
-      // reset detail
+      // reset detail terbuka
       document.querySelectorAll('.item-details.show').forEach(d => d.classList.remove('show'));
       document.querySelectorAll('.link-container[aria-expanded="true"]').forEach(btn => btn.setAttribute('aria-expanded', 'false'));
       document.querySelectorAll('.product-item.is-active').forEach(li => li.classList.remove('is-active'));
-      loadMoreBtn.style.display = filtered.length <= currentCount ? 'none' : 'inline-block';
+      if (loadMoreBtn) {
+        loadMoreBtn.style.display = filtered.length <= currentCount ? 'none' : 'inline-block';
+      }
     }
 
     filterBtns.forEach(btn => {
