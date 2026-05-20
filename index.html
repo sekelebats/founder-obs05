@@ -1,496 +1,852 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>WebInstalMurah | Website Jadi Tanpa Ribet & Bulanan</title>
-    <meta name="description" content="Jasa deployment gratis di Netlify/Vercel, kurasi kode legal, instalasi murah. Mulai Rp150.000. Tanpa langganan bulanan.">
-    <meta property="og:title" content="WebInstalMurah - Website Live Tanpa Biaya Bulanan">
-    <meta property="og:description" content="Deployment gratis, kurasi legal, mulai 150k.">
-    <meta property="og:image" content="https://ing-hub.netlify.app/main/betterlyfe.webp">
-    <meta name="theme-color" content="#0b5fa5">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>betterlyfe.so — Bikin website kecil-kecilan, rapi & mobile-friendly</title>
 
-        :root {
-            --primary: #0b5fa5;
-            --primary-dark: #08447a;
-            --secondary: #2c7a4d;
-            --gray-50: #f9fafb;
-            --gray-100: #f3f4f6;
-            --gray-200: #e5e7eb;
-            --gray-700: #374151;
-            --gray-900: #111827;
-            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
-            --radius-lg: 1.5rem;
-            --radius-md: 1rem;
-        }
+ <link rel="icon" type="image/webp" href="https://img-hub.netlify.app/main/itslyfe.webp">
 
-        body {
-            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-            background: var(--gray-50);
-            color: var(--gray-900);
-            line-height: 1.5;
-        }
+  <meta name="description" content="Betterlyfe - saya membuat website dan one-page sederhana untuk UMKM atau personal brand." />
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.25rem;
-        }
+  <!-- OPEN GRAPH -->
+  <meta property="og:title" content="betterlyfe.so — Bikin website kecil-kecilan, rapi & mobile-friendly" />
+  <meta property="og:description" content="Betterlyfe - saya membuat website dan one-page sederhana untuk UMKM atau personal brand." />
+  <meta property="og:image" content="https://lapak.netlify.app/images/pic1.webp" />
+  <meta property="og:type" content="website" />
 
-        /* header */
-        header {
-            position: sticky;
-            top: 0;
-            background: rgba(255,255,255,0.92);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--gray-200);
-            z-index: 50;
-        }
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.75rem 0;
-        }
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--gray-900), var(--primary));
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-        }
-        .logo span {
-            color: var(--primary);
-            -webkit-text-fill-color: var(--primary);
-        }
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-            list-style: none;
-        }
-        .nav-links a {
-            text-decoration: none;
-            font-weight: 500;
-            color: var(--gray-700);
-        }
-        .nav-links a:hover { color: var(--primary); }
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.75rem;
-            cursor: pointer;
-        }
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: white;
-                padding: 1rem;
-                box-shadow: var(--shadow-md);
-                border-top: 1px solid var(--gray-200);
-            }
-            .nav-links.show {
-                display: flex;
-            }
-            .mobile-menu-btn {
-                display: block;
-            }
-        }
+  <!-- PRELOAD FONT -->
+  <link rel="preload" href="./font/InstrumentSerif-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./font/InstrumentSerif-Italic.woff2" as="font" type="font/woff2" crossorigin>
 
-        /* hero ringkas */
-        .hero {
-            padding: 3rem 0 2rem;
-        }
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            align-items: center;
-        }
-        .hero h1 {
-            font-size: clamp(1.8rem, 5vw, 2.8rem);
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 0.75rem;
-        }
-        .hero-highlight {
-            color: var(--primary);
-        }
-        .hero p {
-            font-size: 1.05rem;
-            color: var(--gray-700);
-            margin-bottom: 1.25rem;
-        }
-        .hero-img {
-            border-radius: 1.5rem;
-            box-shadow: var(--shadow-md);
-            width: 100%;
-            height: auto;
-        }
-        .btn-primary {
-            display: inline-block;
-            background: var(--primary);
-            color: white;
-            padding: 0.75rem 1.8rem;
-            border-radius: 2rem;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.2s;
-            box-shadow: var(--shadow-sm);
-        }
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-        @media (max-width: 768px) {
-            .hero-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            .hero-img {
-                max-width: 80%;
-                margin: 0 auto;
-            }
-        }
-
-        /* section umum */
-        section {
-            padding: 2.5rem 0;
-            border-bottom: 1px solid var(--gray-200);
-        }
-        h2 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            border-left: 4px solid var(--primary);
-            padding-left: 1rem;
-        }
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.5rem;
-        }
-        .card {
-            background: white;
-            border-radius: var(--radius-md);
-            padding: 1.5rem;
-            box-shadow: var(--shadow-sm);
-            transition: all 0.2s;
-            border: 1px solid var(--gray-200);
-        }
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-md);
-        }
-        .card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            color: var(--primary-dark);
-        }
-
-        /* harga */
-        .price-badge {
-            display: inline-block;
-            background: var(--secondary);
-            color: white;
-            padding: 0.25rem 1rem;
-            border-radius: 2rem;
-            font-weight: 700;
-            margin-top: 0.75rem;
-        }
-        .price-range {
-            background: var(--gray-100);
-            padding: 1rem 1.5rem;
-            border-radius: var(--radius-md);
-            text-align: center;
-            margin: 1rem 0;
-        }
-        .price-range .big-price {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--primary);
-        }
-
-        /* testimoni dummy (bisa diganti) */
-        .testi-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1rem;
-        }
-        .testi-card {
-            background: white;
-            border-radius: var(--radius-md);
-            padding: 1rem;
-            font-style: italic;
-            border-left: 3px solid var(--primary);
-        }
-
-        /* accordion FAQ */
-        .accordion {
-            background: white;
-            border-radius: var(--radius-md);
-            margin-bottom: 1rem;
-            border: 1px solid var(--gray-200);
-            overflow: hidden;
-        }
-        .accordion-header {
-            background: var(--gray-50);
-            padding: 1rem 1.25rem;
-            font-weight: 700;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: background 0.2s;
-        }
-        .accordion-header:hover {
-            background: var(--gray-100);
-        }
-        .accordion-header::after {
-            content: "▼";
-            font-size: 0.8rem;
-            transition: transform 0.2s;
-        }
-        .accordion.active .accordion-header::after {
-            transform: rotate(180deg);
-        }
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            padding: 0 1.25rem;
-            background: white;
-        }
-        .accordion.active .accordion-content {
-            max-height: 300px;
-            padding: 0 1.25rem 1rem 1.25rem;
-        }
-
-        /* sticky wa */
-        .sticky-wa {
-            position: fixed;
-            bottom: 1.5rem;
-            right: 1.5rem;
-            background: #25D366;
-            color: white;
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            transition: transform 0.2s;
-            z-index: 100;
-        }
-        .sticky-wa:hover {
-            transform: scale(1.05);
-        }
-        .sticky-wa svg {
-            width: 32px;
-            height: 32px;
-            fill: white;
-        }
-
-        footer {
-            background: var(--gray-100);
-            padding: 2rem 0;
-            text-align: center;
-            font-size: 0.85rem;
-        }
-        @media (max-width: 640px) {
-            .container {
-                padding: 0 1rem;
-            }
-            h2 {
-                font-size: 1.5rem;
-            }
-        }
-    </style>
-</head>
-<body>
-
-<header>
-    <div class="container header-container">
-        <div class="logo">⚡ WebInstal<span>Murah</span></div>
-        <button class="mobile-menu-btn" aria-label="Menu">☰</button>
-        <ul class="nav-links">
-            <li><a href="#layanan">Layanan</a></li>
-            <li><a href="#harga">Harga</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#kontak">Kontak</a></li>
-        </ul>
-    </div>
-</header>
-
-<main>
-    <!-- Hero singkat & engaging -->
-    <section class="hero">
-        <div class="container hero-grid">
-            <div>
-                <h1>Website Live Tanpa <span class="hero-highlight">Biaya Bulanan</span></h1>
-                <p>Deployment gratis di Netlify/Vercel. Kurasi kode legal. Instalasi murah. Mulai dari <strong>Rp150.000</strong>.</p>
-                <a href="https://wa.me/6281234567890?text=Halo%20WebInstalMurah,%20saya%20tertarik%20jasanya" class="btn-primary" target="_blank">💬 Pesan via WhatsApp →</a>
-            </div>
-            <img class="hero-img" src="https://ing-hub.netlify.app/main/betterlyfe.webp" alt="Website profesional cepat" loading="eager">
-        </div>
-    </section>
-
-    <!-- Layanan utama (ringkas) -->
-    <section id="layanan">
-        <div class="container">
-            <h2>⚡ Layanan Inti</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <h3>🚀 Deployment Gratis</h3>
-                    <p>Onlinekan website di Netlify/Vercel. Domain standar, tanpa biaya bulanan. Akun milik Anda.</p>
-                </div>
-                <div class="card">
-                    <h3>📦 Kurasi Kode Legal</h3>
-                    <p>Template & kode dari GitHub berlisensi MIT/GPL. Legal, aman, tinggal pakai.</p>
-                </div>
-                <div class="card">
-                    <h3>🔧 Instalasi + Maintenance</h3>
-                    <p>Kami pasang & sesuaikan. Maintenance ringan tersedia. Fokus ke bisnis Anda.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Harga jelas (range) -->
-    <section id="harga">
-        <div class="container">
-            <h2>💰 Mulai dari Rp150.000</h2>
-            <div class="price-range">
-                <p class="big-price">Rp150.000 – Rp350.000</p>
-                <p>Harga tergantung kompleksitas & layanan tambahan. Konsultasi gratis via WhatsApp.</p>
-                <a href="https://wa.me/6281234567890?text=Halo,%20saya%20butuh%20website%20dengan%20range%20harga%20Rp150-350rb" class="btn-primary" style="margin-top: 0.75rem;" target="_blank">Tanya Harga Pasti →</a>
-            </div>
-            <div class="card-grid" style="margin-top: 1rem;">
-                <div class="card">
-                    <h3>Paket Basic</h3>
-                    <p>Deploy template siap pakai + akun Netlify.</p>
-                    <div class="price-badge">~150k</div>
-                </div>
-                <div class="card">
-                    <h3>Paket Kurasi</h3>
-                    <p>Pilih template + kurasi legal + instalasi.</p>
-                    <div class="price-badge">~250k</div>
-                </div>
-                <div class="card">
-                    <h3>Paket Complete</h3>
-                    <p>Semua layanan + maintenance 1 bulan.</p>
-                    <div class="price-badge">~350k</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimoni dummy (bisa diganti nanti) -->
-    <section>
-        <div class="container">
-            <h2>📢 Yang Bilang</h2>
-            <div class="testi-grid">
-                <div class="testi-card">“Proses cepat, hasil rapi. Akun diserahkan penuh. Rekomended!” — <strong>Andi (UKM)</strong></div>
-                <div class="testi-card">“Gak perlu pusing hosting bulanan, deploy langsung live. Makasih WebInstalMurah.” — <strong>Sinta (Freelance)</strong></div>
-                <div class="testi-card">“Pertama kali bikin website, dibantu step by step. Worth it!” — <strong>Rizky (Content Creator)</strong></div>
-            </div>
-            <p class="gray-text" style="font-size: 0.8rem; margin-top: 0.5rem;">*Testimoni sementara, Anda bisa ganti nanti di GitHub.</p>
-        </div>
-    </section>
-
-    <!-- Accordion FAQ di bagian bawah -->
-    <section id="faq">
-        <div class="container">
-            <h2>❓ Pertanyaan Umum</h2>
-            <div class="accordion">
-                <div class="accordion-header">Apakah saya bisa pakai domain sendiri?</div>
-                <div class="accordion-content">Tentu. Beli domain sendiri (Niagahoster, Cloudflare, dll) lalu arahkan ke Netlify/Vercel. Kami bantu setting jika perlu.</div>
-            </div>
-            <div class="accordion">
-                <div class="accordion-header">Apakah ada biaya bulanan setelah website live?</div>
-                <div class="accordion-content">Tidak. Netlify dan Vercel punya free tier yang cukup untuk website statis, portfolio, landing page. Anda tidak perlu bayar hosting apapun.</div>
-            </div>
-            <div class="accordion">
-                <div class="accordion-header">Legal? Kodenya dari mana?</div>
-                <div class="accordion-content">Kami hanya kurasi dari repositori open source dengan lisensi MIT, GPL, Apache. Legal dan aman. Lisensi asli tetap tercantum.</div>
-            </div>
-            <div class="accordion">
-                <div class="accordion-header">Berapa lama proses pengerjaan?</div>
-                <div class="accordion-content">Biasanya 1-2 hari kerja tergantung kompleksitas dan respons dari Anda. Cepat untuk paket basic.</div>
-            </div>
-            <div class="accordion">
-                <div class="accordion-header">Bagaimana cara pesan?</div>
-                <div class="accordion-content">Klik tombol WhatsApp di pojok kanan atau di hero. Nanti kami bantu diskusi kebutuhan Anda.</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Kontak singkat + footer -->
-    <footer id="kontak">
-        <div class="container">
-            <p>📧 Hubungi: <a href="https://wa.me/6281234567890" target="_blank" style="color: var(--primary);">WhatsApp (klik)</a> | @webinstalmurah</p>
-            <p style="margin-top: 0.5rem;">© 2026 WebInstalMurah — Jasa website tanpa ribet & bulanan. Gambar placeholder dari ing-hub.netlify.app</p>
-            <p style="font-size: 0.7rem;">*Testimoni bersifat ilustrasi, bisa diganti sendiri.</p>
-        </div>
-    </footer>
-</main>
-
-<!-- Sticky tombol WA (blank, nanti ganti nomor) -->
-<a href="https://wa.me/6281234567890?text=Halo%20WebInstalMurah,%20saya%20tertarik%20jasanya" class="sticky-wa" target="_blank" aria-label="Chat WhatsApp">
-    <svg viewBox="0 0 24 24"><path d="M12.031 2.016c-5.484 0-9.984 4.5-9.984 9.984 0 1.828 0.516 3.516 1.359 4.969l-1.406 5.016 5.156-1.406c1.406 0.797 3 1.219 4.875 1.219 5.484 0 9.984-4.5 9.984-9.984s-4.5-9.984-9.984-9.984zM12.031 21.984c-1.5 0-2.953-0.375-4.219-1.078l-0.328-0.188-3.094 0.844 0.844-3.094-0.188-0.328c-0.75-1.266-1.125-2.719-1.125-4.219 0-4.641 3.797-8.438 8.438-8.438s8.438 3.797 8.438 8.438-3.797 8.438-8.438 8.438zM17.016 13.688c-0.281-0.141-1.641-0.797-1.875-0.891s-0.469-0.141-0.656 0.141-0.797 0.891-0.984 1.078c-0.141 0.141-0.328 0.188-0.609 0.047-0.281-0.141-1.172-0.422-2.25-1.359-0.844-0.75-1.406-1.688-1.594-1.969-0.188-0.281-0.047-0.469 0.141-0.609 0.141-0.141 0.328-0.422 0.469-0.563 0.141-0.141 0.188-0.281 0.281-0.469 0.094-0.188 0.047-0.328-0.047-0.469s-0.656-1.547-0.891-2.109c-0.234-0.563-0.469-0.469-0.656-0.469h-0.563c-0.188 0-0.516 0.094-0.797 0.422-0.281 0.328-1.078 1.078-1.078 2.578s1.078 2.953 1.219 3.141c0.141 0.188 2.063 3.234 5.016 4.5 0.703 0.281 1.266 0.469 1.688 0.609 0.703 0.234 1.359 0.188 1.875 0.141 0.563-0.047 1.734-0.703 1.969-1.359s0.234-1.266 0.141-1.359c-0.094-0.141-0.328-0.188-0.609-0.328z"/></svg>
-</a>
-
-<script>
-    // mobile menu toggle
-    const menuBtn = document.querySelector('.mobile-menu-btn');
-    const navLinks = document.querySelector('.nav-links');
-    if (menuBtn) {
-        menuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('show');
-            menuBtn.textContent = navLinks.classList.contains('show') ? '✖' : '☰';
-        });
+  <style>
+    /* FONT ANTI-LONCAT */
+    @font-face {
+      font-family: 'Instrument Serif';
+      src: url('./font/InstrumentSerif-Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+      size-adjust: 103%;
     }
 
-    // Accordion logic
-    const accordions = document.querySelectorAll('.accordion');
-    accordions.forEach(acc => {
-        const header = acc.querySelector('.accordion-header');
-        header.addEventListener('click', () => {
-            acc.classList.toggle('active');
-            // optional: close others? biar simple, bisa buka banyak. Tapi lebih user friendly kalau hanya satu? biar ringkas tidak usah.
+    @font-face {
+      font-family: 'Instrument Serif';
+      src: url('./font/InstrumentSerif-Italic.woff2') format('woff2');
+      font-weight: 400;
+      font-style: italic;
+      font-display: swap;
+      size-adjust: 103%;
+    }
+
+    /* === RESET DASAR === */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body, h1, h2, h3, h4, h5, h6, p, ul, ol, dl, dd, figure, blockquote {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* === ROOT (custom properties) === */
+    :root {
+      /* kosong sementara */
+    }
+
+    html {
+      font-size: 100%;
+    }
+
+    /* Smooth scroll hanya jika user tidak mengurangi gerakan */
+    @media (prefers-reduced-motion: no-preference) {
+      html {
+        scroll-behavior: smooth;
+      }
+    }
+
+    body {
+      opacity: 0;
+      transition: opacity 0.15s ease;
+      font-family: 'Instrument Serif', Georgia, serif;
+      background: #fff;
+      color: #000;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeSpeed;
+      font-size: 1.125rem;
+    }
+
+    body.fonts-loaded {
+      opacity: 1;
+    }
+
+    img, video, canvas, svg {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .main-container {
+      max-width: min(90%, 750px);
+      margin: 0 auto;
+      width: 100%;
+      padding: 0 1.25rem;
+    }
+
+    /* HEADER STICKY */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.2rem;
+      color: #333;
+      position: sticky;
+      top: 0;
+      background: #fff;
+      z-index: 20;
+      padding: 0.5rem 1.25rem;
+      margin-left: -1.25rem;
+      margin-right: -1.25rem;
+      width: calc(100% + 2.5rem);
+    }
+
+    .logo {
+      font-weight: 600;
+      letter-spacing: -0.5px;
+    }
+
+    .docu-link {
+      font-size: 0.9rem;
+      color: #000;
+      text-decoration: none;
+      border-bottom: 1px dotted #aaa;
+      transition: opacity 0.2s;
+    }
+    .docu-link:hover {
+      opacity: 0.7;
+      border-bottom-color: #000;
+    }
+
+    h1 {
+      font-size: clamp(1.4rem, 6vw + 0.5rem, 2.4rem);
+      font-weight: 400;
+      margin: 2rem 0 1rem;
+      color: #222;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    h2 {
+      font-size: clamp(0.95rem, 3.5vw + 0.3rem, 1.5rem);
+      font-weight: 400;
+      margin: 0 0 2.5rem;
+      color: #444;
+      text-align: center;
+    }
+
+    .intro-note {
+      text-align: center;
+      font-size: 0.95rem;
+      color: #555;
+      margin: -1rem 0 2.5rem;
+      font-style: italic;
+    }
+
+    .text-icon {
+      text-align: center;
+      margin: 2rem 0 2.5rem;
+    }
+
+    .text-icon a {
+      display: inline-block;
+      background-color: #1a1a1a;
+      color: #fff;
+      padding: 0.6rem 1.8rem;
+      font-size: 1rem;
+      font-family: inherit;
+      font-style: italic;
+      text-decoration: none;
+      border-radius: 999px;
+      border: 1px solid #1a1a1a;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s;
+      min-height: 44px;
+      min-width: 160px;
+    }
+
+    .text-icon a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+      opacity: 0.9;
+    }
+
+    .filter-tabs {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      padding-bottom: 0.5rem;
+      margin-bottom: 2rem;
+      justify-content: flex-start;
+      scrollbar-width: thin;
+      background: #fff;
+      padding-top: 0.5rem;
+    }
+
+    .filter-btn {
+      font-family: inherit;
+      font-size: 0.95rem;
+      padding: 0.5rem 1.2rem;
+      border-radius: 999px;
+      border: 1px solid #ddd;
+      background: transparent;
+      color: #555;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .filter-btn:hover {
+      border-color: #999;
+      color: #000;
+    }
+
+    .filter-btn.active {
+      background: #1a1a1a;
+      color: #fff;
+      border-color: #1a1a1a;
+    }
+
+    button:focus-visible, a:focus-visible, .link-container:focus-visible {
+      outline: 2px solid #000;
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #f0f0f0;
+      padding-bottom: 1.5rem;
+    }
+
+    .hidden-item {
+      display: none;
+    }
+
+    .link-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      background: none;
+      border: none;
+      font-family: inherit;
+      font-size: 1rem;
+      cursor: pointer;
+      padding: 0.25rem 0;
+      text-align: left;
+    }
+
+    .link-container span:first-child {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #000;
+    }
+
+    .meta {
+      font-size: 0.85rem;
+      color: #555;
+      white-space: nowrap;
+    }
+
+    .item-details {
+      display: none;
+      margin-top: 1.2rem;
+      padding-top: 1rem;
+      border-top: 1px dotted #ddd;
+      animation: fadeIn 0.2s ease;
+    }
+
+    .item-details.show {
+      display: block;
+    }
+
+    .product-img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+    }
+
+    .details-desc {
+      font-size: 1rem;
+      color: #333;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+      text-align: left;
+    }
+
+    .action-row {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
+
+    .action-link {
+      color: #000;
+      text-decoration: none;
+      border-bottom: 1px dotted #999;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .action-link:hover {
+      color: #555;
+      border-bottom-color: #555;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .product-item.is-active .link-container span:first-child {
+      font-weight: 600;
+      position: relative;
+    }
+
+    .product-item.is-active .link-container::before {
+      content: '→';
+      position: absolute;
+      left: -1.2rem;
+      font-size: 1rem;
+      color: #000;
+    }
+
+    .load-more-wrap {
+      text-align: center;
+      margin: 1.5rem 0 2rem;
+    }
+
+    .load-more-btn {
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-style: italic;
+      padding: 0.6rem 1.8rem;
+      border-radius: 999px;
+      border: 1px solid #ddd;
+      background: transparent;
+      color: #555;
+      cursor: pointer;
+      transition: all 0.2s;
+      min-height: 44px;
+    }
+
+    .load-more-btn:hover {
+      border-color: #1a1a1a;
+      color: #1a1a1a;
+    }
+
+    .info-card, .cta-card, .policy-section {
+      margin-top: 3rem;
+      padding: 1.8rem;
+      border: 1px dashed #e0e0e0;
+      text-align: center;
+    }
+
+    .info-card h3, .cta-card h3, .policy-section h3 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 0.75rem;
+    }
+
+    .info-card p, .cta-card p, .policy-section p {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 0.8rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: #1a1a1a;
+      color: #fff;
+      padding: 0.4rem 1.5rem;
+      font-size: 0.9rem;
+      font-family: inherit;
+      font-style: italic;
+      text-decoration: none;
+      border-radius: 999px;
+      border: 1px solid #1a1a1a;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s;
+      margin-top: 0.5rem;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+      opacity: 0.9;
+    }
+
+    .footer-text {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #555;
+      margin-top: 2rem;
+      padding-bottom: 0.75rem;
+      margin-bottom: 0;
+    }
+
+    .hero-img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+    }
+
+    .insight-box {
+      margin-top: 3rem;
+      padding: 1.5rem;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      color: #444;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .insight-box span {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.4rem;
+      font-size: 1rem;
+      color: #222;
+    }
+
+    /* style untuk konten aturan main */
+    .service-list {
+      text-align: left;
+      margin: 1rem 0;
+      padding-left: 1.2rem;
+    }
+    .service-list li {
+      margin-bottom: 0.75rem;
+      border: none;
+      padding-bottom: 0;
+    }
+    .text-left {
+      text-align: left;
+    }
+    details {
+      margin-top: 1rem;
+      background: #fafafa;
+      padding: 1rem;
+      border-radius: 12px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+    .small-print {
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    @media (max-width: 30em) {
+      body {
+        font-size: 1rem;
+      }
+      .main-container {
+        padding: 0 0.75rem;
+      }
+      .header {
+        padding: 0.5rem 0.75rem;
+        margin-left: -0.75rem;
+        margin-right: -0.75rem;
+        width: calc(100% + 1.5rem);
+      }
+      .link-container span:first-child {
+        font-size: 1.1rem;
+      }
+      .filter-btn {
+        font-size: 0.9rem;
+        padding: 0.4rem 1rem;
+      }
+    }
+
+    /* === PRINT STYLE === */
+    @media print {
+      .header, .filter-tabs, .load-more-wrap, .text-icon, .cta-card, .info-card, .insight-box, .policy-section {
+        display: none;
+      }
+      body {
+        font-size: 12pt;
+        color: #000;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="main-container">
+
+  <header class="header">
+    <div class="logo">betterlyfe</div>
+    <a href="https://img-hub.netlify.app" class="docu-link" target="_blank" rel="noopener noreferrer">[Docu]</a>
+  </header>
+
+  <main>
+    <h1>Saya buat website kecil-kecilan, yang penting rapi & mobile-friendly</h1>
+    <h2>Bisa dipakai UMKM atau personal brand yang baru mulai.</h2>
+
+    <p class="intro-note">Full list ada di bawah, mulai dari Html sampai Carrd-Scroll cuss 👇</p>
+
+    <img class="hero-img" src="https://lapak.netlify.app/images/pic1.webp"
+         alt="betterlyfe banner"
+         loading="lazy">
+
+    <div class="text-icon">
+      <a href="https://wa.me/+6285155308288">Chat?</a>
+    </div>
+
+    <div class="filter-tabs" role="tablist" aria-label="Filter kategori produk">
+      <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">Semua</button>
+      <button class="filter-btn" data-filter="one-page" role="tab" aria-selected="false">One Page</button>
+      <button class="filter-btn" data-filter="link-in-bio" role="tab" aria-selected="false">Link in Bio</button>
+      <button class="filter-btn" data-filter="store" role="tab" aria-selected="false">Store</button>
+      <button class="filter-btn" data-filter="card" role="tab" aria-selected="false">Card</button>
+    </div>
+
+    <ul id="productList">
+      <li data-category="one-page" class="product-item">
+        <button class="link-container" aria-expanded="false">
+          <span>Betterlyfe</span>
+          <span class="meta">HTML</span>
+        </button>
+        <div class="item-details">
+          <img src="https://lapak.netlify.app/images/pic1.webp" alt="Preview Betterlyfe" class="product-img" loading="lazy">
+          <div class="details-desc">Nah kalo yang ini agak fleksibel. Kamu bisa atur produk sendiri, trus tiap produk bisa di-embed WhatsApp dengan pesan custom. Cocok buat yang dagangannya bervariasi dan pengen pelanggan langsung klik WhatsApp dari produk tertentu.</div>
+          <div class="action-row">
+            <a href="https://betterlyfe.netlify.app" class="action-link" target="_blank" rel="noopener noreferrer">Demo</a>
+            <a href="https://wa.me/6285155308288?text=saya%20mau%20pesan%20betterlyfe" class="action-link">WhatsApp</a>
+          </div>
+        </div>
+      </li>
+      <li data-category="link-in-bio" class="product-item">
+        <button class="link-container" aria-expanded="false">
+          <span>Nitrate</span>
+          <span class="meta">Link in bio</span>
+        </button>
+        <div class="item-details">
+          <img src="https://lapak.netlify.app/images/pic1.webp" alt="Preview Nitrate" class="product-img" loading="lazy">
+          <div class="details-desc">Link in bio dengan tema minimalis. Ada toggle mode gelap & terang, jadi ngikutin selera user. Cocok buat yang pengen bio Instagram-nya keliatan bersih dan sedikit beda dari yang lain.</div>
+          <div class="action-row"><a href="https://nitrate.netlify.app" class="action-link" target="_blank" rel="noopener noreferrer">Demo</a><a href="https://wa.me/6285155308288?text=saya%20mau%20pesan%20nitrate" class="action-link">WhatsApp</a></div>
+        </div>
+      </li>
+      <li data-category="one-page" class="product-item">
+        <button class="link-container" aria-expanded="false">
+          <span>Kertas</span>
+          <span class="meta">One page</span>
+        </button>
+        <div class="item-details">
+          <img src="https://lapak.netlify.app/images/pic1.webp" alt="Preview Kertas" class="product-img" loading="lazy">
+          <div class="details-desc">One page yang minimalis banget. Bisa ditambah foto sebagai penjelas, plus tombol demo dan WhatsApp. Pas buat kamu yang gak mau terlalu rame tapi tetep informatif.</div>
+          <div class="action-row"><a href="https://kertasdotio.netlify.app" class="action-link" target="_blank" rel="noopener noreferrer">Demo</a><a href="https://wa.me/6285155308288?text=saya%20mau%20pesan%20kertas" class="action-link">WhatsApp</a></div>
+        </div>
+      </li>
+      <li data-category="store" class="product-item">
+        <button class="link-container" aria-expanded="false">
+          <span>Kelontong</span>
+          <span class="meta">Store</span>
+        </button>
+        <div class="item-details">
+          <img src="https://lapak.netlify.app/images/pic1.webp" alt="Preview Kelontong" class="product-img" loading="lazy">
+          <div class="details-desc">Ini saya bikin untuk yang punya beberapa produk unggulan. Ada layout vertikal buat highlight, lalu di bawahnya horizontal biar hemat ruang. Cocok buat toko kecil yang produknya gak banyak-banyak banget.</div>
+          <div class="action-row"><a href="https://kelontong.netlify.app" class="action-link" target="_blank" rel="noopener noreferrer">Demo</a><a href="https://wa.me/6285155308288?text=saya%20mau%20pesan%20kelontong" class="action-link">WhatsApp</a></div>
+        </div>
+      </li>
+      <li data-category="one-page" class="product-item">
+        <button class="link-container" aria-expanded="false">
+          <span>Explainedby</span>
+          <span class="meta">One page</span>
+        </button>
+        <div class="item-details">
+          <img src="https://lapak.netlify.app/images/pic1.webp" alt="Preview Explainedby" class="product-img" loading="lazy">
+          <div class="details-desc">Sebenernya ini link-in-bio, tapi kamu harus jelasin sedikit tentang diri kamu ke user. Bagus buat personal brand yang baru bangun audiens, atau yang suka storytelling.</div>
+          <div class="action-row"><a href="https://explainedby.carrd.co" class="action-link" target="_blank" rel="noopener noreferrer">Demo</a><a href="https://wa.me/6285155308288?text=saya%20mau%20pesan%20explainedby" class="action-link">WhatsApp</a></div>
+        </div>
+      </li>
+      <li data-category="one-page" class="product-item">
+        <button class="link-container" aria-expanded="false">
+          <span>Pizzariaa</span>
+          <span class="meta">One page</span>
+        </button>
+        <div class="item-details">
+          <img src="https://lapak.netlify.app/images/pic1.webp" alt="Preview Pizzariaa" class="product-img" loading="lazy">
+          <div class="details-desc">Ini untuk industri rumahan yang fokus ke makanan. Setiap produk bisa dikasih ingredient singkat plus tombol CTA. Jadi pelanggan langsung tahu isinya sebelum nanya-nanya.</div>
+          <div class="action-row"><a href="https://pizzariaa.carrd.co" class="action-link" target="_blank" rel="noopener noreferrer">Demo</a><a href="https://wa.me/6285155308288?text=saya%20mau%20pesan%20pizzariaa" class="action-link">WhatsApp</a></div>
+        </div>
+      </li>
+      <li data-category="one-page" class="product-item">
+        <button class="link-container" aria-expanded="false">
+          <span>Tokokopi</span>
+          <span class="meta">One page</span>
+        </button>
+        <div class="item-details">
+          <img src="https://lapak.netlify.app/images/pic1.webp" alt="Preview Tokokopi" class="product-img" loading="lazy">
+          <div class="details-desc">Satu halaman sederhana buat promosi toko kecil. Strukturnya: intro singkat, produk, lalu tutup dengan CTA. Gak kebanyakan section, tapi cukup buat orang langsung paham.</div>
+          <div class="action-row"><a href="https://tokokopi.carrd.co" class="action-link" target="_blank" rel="noopener noreferrer">Demo</a><a href="https://wa.me/6285155308288?text=saya%20mau%20pesan%20tokokopi" class="action-link">WhatsApp</a></div>
+        </div>
+      </li>
+      <li data-category="one-page" class="product-item">
+        <button class="link-container" aria-expanded="false">
+          <span>Ngopislur</span>
+          <span class="meta">One page</span>
+        </button>
+        <div class="item-details">
+          <img src="https://lapak.netlify.app/images/pic1.webp" alt="Preview Ngopislur" class="product-img" loading="lazy">
+          <div class="details-desc">Satu halaman yang agak lebih formal dikit. Cocok buat bisnis skala menengah ke bawah yang pengen punya kesan profesional tanpa harus ribet bikin website dari nol.</div>
+          <div class="action-row"><a href="https://ngopislur.carrd.co" class="action-link" target="_blank" rel="noopener noreferrer">Demo</a><a href="https://wa.me/6285155308288?text=saya%20mau%20pesan%20ngopislur" class="action-link">WhatsApp</a></div>
+        </div>
+      </li>
+      <li data-category="card" class="product-item">
+        <button class="link-container" aria-expanded="false">
+          <span>Reallyformal</span>
+          <span class="meta">One page</span>
+        </button>
+        <div class="item-details">
+          <img src="https://lapak.netlify.app/images/pic1.webp" alt="Preview Reallyformal" class="product-img" loading="lazy">
+          <div class="details-desc">One page yang fungsinya kayak resume online. Kamu bisa letakin ini di social media sebagai fast resume. Berguna banget buat yang suka networking atau cari kerja remote.</div>
+          <div class="action-row"><a href="https://reallyformal.carrd.co" class="action-link" target="_blank" rel="noopener noreferrer">Demo</a><a href="https://wa.me/6285155308288?text=saya%20mau%20pesan%20reallyformal" class="action-link">WhatsApp</a></div>
+        </div>
+      </li>
+      <li data-category="card" class="product-item">
+        <button class="link-container" aria-expanded="false">
+          <span>Cardpro</span>
+          <span class="meta">One page</span>
+        </button>
+        <div class="item-details">
+          <img src="https://lapak.netlify.app/images/pic1.webp" alt="Preview Cardpro" class="product-img" loading="lazy">
+          <div class="details-desc">Satu halaman sederhana yang fungsinya kayak kartu nama online. Ada intro singkat, kontak (sosmed, telepon, email), dan sedikit porto. Pas buat freelance atau pemilik usaha kecil.</div>
+          <div class="action-row"><a href="https://cardpro.carrd.co" class="action-link" target="_blank" rel="noopener noreferrer">Demo</a><a href="https://wa.me/6285155308288?text=saya%20mau%20pesan%20cardpro" class="action-link">WhatsApp</a></div>
+        </div>
+      </li>
+    </ul>
+
+    <div class="load-more-wrap">
+      <button class="load-more-btn" id="loadMoreBtn" aria-label="Tampilkan lebih banyak produk">Load more →</button>
+    </div>
+
+    <div class="insight-box">
+      <h3>💡 Perbedan Link-in-bio yang umum</h3>
+      <p>To be fair kalau pake Linktree dan yang lain itu memang lebih cepat karna template sudah jadi serta ga perlu pusing buat hosting dan code (?) tapi karna itu jadi limit dalam hal ini faktor designnya yang gitu-gitu aja, beda dengan design kode sendiri yang lebih fleksibel bisa atur layout, jumlah element dan lainnya. pilih sesuai kebutuhan aja karna gada yang lebih baik atau buruk yang ada company memang ngambil gap yang masih kosong.</p>
+    </div>
+
+    <!-- ========== KONTEN ATURAN MAIN DITAMBAHKAN DI SINI ========== -->
+    <div class="policy-section">
+      <h3>⚠️ Punya Masalah Ini? Kami Ada Solusinya.</h3>
+      <p>Anda ingin punya website sendiri, tapi selalu terhenti karena biaya hosting dan langganan tool premium yang mahal.<br>
+      Anda ingin tampil profesional dengan link in bio, portfolio, atau landing page, tapi tidak mau ribet ngoding dari nol.<br>
+      Anda sudah coba cari-cari template gratis, tapi bingung mana yang legal, mana yang aman, dan bagaimana cara memasangnya.<br>
+      <strong>Jika itu yang Anda rasakan, Anda berada di tempat yang tepat.</strong></p>
+      
+      <h3>✨ Solusi Kami</h3>
+      <p>Kami hadir untuk menjembatani keinginan Anda memiliki website profesional dengan kenyataan bahwa tidak semua orang perlu mengeluarkan uang ratusan ribu per bulan hanya untuk hosting dan template premium. Kami percaya bahwa dengan memaksimalkan platform gratis yang sudah disediakan oleh Netlify, Vercel, dan Carrd, siapa pun bisa memiliki online presence yang memukau. Tugas kami adalah mewujudkannya untuk Anda, tanpa Anda perlu pusing memikirkan teknisnya.</p>
+    </div>
+
+    <div class="policy-section">
+      <h3>📦 Apa yang Kami Jual?</h3>
+      <p>Kami tidak menjual software. Kami tidak menjual template premium. Kami menjual hasil kerja, keahlian, dan kenyamanan.</p>
+      <ul class="service-list text-left">
+        <li><strong>1. Jasa Deployment Website di Netlify dan Vercel (Gratis)</strong> – Kami onlinekan website Anda pakai akun gratis, konfigurasi, dan serahkan akun sepenuhnya ke Anda. Tanpa biaya bulanan.</li>
+        <li><strong>2. Jasa Desain Halaman dengan Carrd (Free Plan)</strong> – Desain one-page elegan dengan Carrd gratis. Jika butuh fitur premium (Carrd Pro), kami informasikan sejak awal.</li>
+        <li><strong>3. Jasa Kurasi Kode HTML dan Template Gratis Berlisensi Resmi</strong> – Kami seleksi kode dari GitHub & sumber terbuka dengan lisensi MIT, GPL, dll. Anda tinggal pilih, kami siapkan.</li>
+        <li><strong>4. Jasa Instalasi Kode</strong> – Upload, konfigurasi, penyesuaian sederhana. Website langsung berfungsi.</li>
+        <li><strong>5. Jasa Maintenance</strong> – Update, perbaikan kecil, penyesuaian kebutuhan. Anda fokus bisnis, kami urus teknis.</li>
+        <li><strong>+ Pembuatan Akun dengan Nama User Pilihan</strong> – Kami daftarkan akun Netlify/Vercel/Carrd dengan username yang Anda inginkan. Setelah selesai, akses penuh milik Anda.</li>
+      </ul>
+    </div>
+
+    <div class="policy-section">
+      <h3>✅ Kenapa Harus Memilih Kami?</h3>
+      <ul class="service-list text-left">
+        <li><strong>Hemat</strong> – Tidak perlu berlangganan hosting premium atau tool berbayar bulanan. Kami maksimalkan yang gratis.</li>
+        <li><strong>Legal</strong> – Setiap kode memiliki lisensi resmi yang memperbolehkan penggunaan kembali.</li>
+        <li><strong>Akun jadi milik Anda</strong> – Kami tidak menyewakan akun atau menahan kredensial. Setelah pekerjaan selesai, semuanya kami serahkan penuh.</li>
+        <li><strong>Tanpa ngoding</strong> – Tidak perlu pusing istilah teknis. Kami yang mengerjakan, Anda tinggal terima jadi.</li>
+      </ul>
+      <h3>👥 Siapa yang Cocok?</h3>
+      <p>Konten kreator, freelancer, pebisnis kecil, atau siapa pun yang ingin tampil online tanpa ribet dan mahal.</p>
+      <h3>📞 Cara Pesan</h3>
+      <p>Hubungi kami melalui kontak WhatsApp di bawah. Ceritakan kebutuhan Anda, kami akan berikan rekomendasi solusi terbaiknya.</p>
+      <div style="margin-top: 1rem;"><a href="https://wa.me/+6285155308288" class="cta-button" style="background-color:#000;">Chat via WhatsApp →</a></div>
+    </div>
+
+    <div class="policy-section">
+      <h3>📚 Tentang Bisnis Kami</h3>
+      <p><strong>Apa yang Kami Jual?</strong> Kami tidak menjual kode. Kami menjual hasil kerja kurasi. Ibaratnya seperti pustakawan yang menghabiskan waktu berjam-jam untuk mencari, menyeleksi, menguji, mengelompokkan, dan mendokumentasikan koleksi terbaik dari GitHub, WordPress.org, dan repositori open source lainnya. Anda membayar untuk efisiensi, kenyamanan, dan kepercayaan bahwa kode tersebut sudah melalui proses seleksi.</p>
+      <p><strong>Apakah Ini Legal?</strong> Ya, sepenuhnya legal. Kami hanya menyertakan kode dengan lisensi jelas yang memperbolehkan redistribusi (MIT, GPL, Apache, Creative Commons). Kepatuhan terhadap lisensi adalah fondasi bisnis kami.</p>
+      <p><strong>Mengapa Harus Membayar Jika Gratis?</strong> Karena waktu adalah uang. Mencari, memverifikasi kualitas, mematuhi lisensi, dan mengorganisasi membutuhkan tenaga. Biaya Anda adalah investasi untuk menghemat puluhan jam kerja sendiri.</p>
+    </div>
+
+    <div class="policy-section">
+      <h3>📜 Syarat dan Ketentuan</h3>
+      <details>
+        <summary>Klik untuk membaca Syarat & Ketentuan lengkap</summary>
+        <div class="small-print" style="margin-top: 1rem;">
+          <p><strong>Terakhir Diperbarui: 16 Mei 2026</strong></p>
+          <p><strong>1. Penerimaan Syarat</strong><br>Dengan mengakses dan menggunakan layanan kami serta membeli produk digital, Anda menyetujui Syarat dan Ketentuan ini.</p>
+          <p><strong>2. Definisi</strong><br>“Produk” merujuk pada file digital, paket kode hasil kurasi. “Aset Gratis” adalah file digital asli yang tersedia publik di bawah lisensi redistribusi (GPL, MIT, Apache, Creative Commons, atau Domain Publik).</p>
+          <p><strong>3. Sifat Produk Kami</strong><br>Produk kami adalah koleksi hasil kurasi dari Aset Gratis. Kami tidak mengklaim kepemilikan atau hak cipta atas masing-masing aset. Yang Anda bayar adalah pekerjaan kurasi, pengorganisasian, pengujian, dokumentasi, dan penyajian.</p>
+          <p><strong>4. Lisensi Masing-masing Aset</strong><br>Setiap aset mempertahankan lisensi aslinya. Anda bertanggung jawab meninjau dan mematuhi lisensi tersebut. Kami tidak memberikan lisensi ulang.</p>
+          <p><strong>5. Hal yang Boleh Anda Lakukan</strong><br>Menggunakan produk pada proyek tanpa batas (tunduk lisensi asli), memodifikasi sesuai izin lisensi, dan mendistribusikan ulang hanya jika lisensi asli mengizinkan.</p>
+          <p><strong>6. Hal yang Tidak Boleh Anda Lakukan</strong><br>Mengklaim hak cipta atas aset, memberikan lisensi ulang, menjual koleksi kurasi sebagai milik sendiri tanpa izin tertulis dari kami, atau melanggar lisensi asli.</p>
+          <p><strong>7. Tanpa Garansi</strong><br>Produk disediakan “apa adanya”. Kami tidak menjamin bebas kesalahan atau sesuai kebutuhan spesifik Anda.</p>
+          <p><strong>8. Batasan Tanggung Jawab</strong><br>Kami tidak bertanggung jawab atas kerusakan langsung atau tidak langsung dari penggunaan produk kami.</p>
+          <p><strong>9. Kebijakan Pengembalian Dana</strong><br>Karena sifat digital dan ketersediaan publik dari aset, semua penjualan bersifat final. Tidak ada pengembalian dana setelah produk diunduh.</p>
+          <p><strong>10. Ganti Rugi</strong><br>Anda setuju mengganti rugi kami dari klaim yang timbul dari pelanggaran Syarat ini atau lisensi asli aset.</p>
+          <p><strong>11. Perubahan Syarat</strong><br>Kami berhak mengubah Syarat ini kapan saja. Perubahan diposting di halaman ini.</p>
+          <p><strong>12. Kontak</strong><br>Untuk pertanyaan mengenai Syarat ini, hubungi kami via WhatsApp: +6285155308288</p>
+        </div>
+      </details>
+    </div>
+    <!-- ========== AKHIR KONTEN ATURAN MAIN ========== -->
+
+    <div class="info-card">
+      <h3>📄 Sekelebats info</h3>
+      <p>Untuk kode HTML saya bikinnya dibantu LLM. Jadi saya yang arahkan proses mendesain kodenya. Kalau hasilnya gak sesuai, saya ubah sendiri, atau minta LLM bantu kasih solusi. Intinya hasil akhir tetep saya yang pegang kendali, bukan template mentah. Semua kode saya simpen di GitHub (private) dan buat Carrd saya buat sendiri karna Carrd adalah No-code builder.</p>
+    </div>
+
+    <div style="margin: 2.5rem 0 1.5rem; text-align: center; font-style: italic; color: #888;">Issue terbaru bisa check 👇</div>
+    <ul>
+      <li class="product-item">
+        <button class="link-container" aria-expanded="false">
+          <span>Dokumentasi</span>
+          <span class="meta">ReadMe</span>
+        </button>
+        <div class="item-details">
+          <img src="https://lapak.netlify.app/images/pic1.webp" alt="Preview Dokumentasi" class="product-img" loading="lazy">
+          <div class="details-desc">Penjelasan tentang design yang saya buat dan mungkin saya buka sedikit kodenya.</div>
+          <div class="action-row"><a href="https://img-hub.netlify.app" class="action-link" target="_blank" rel="noopener noreferrer">Buka Dokumentasi</a></div>
+        </div>
+      </li>
+    </ul>
+
+    <div class="cta-card">
+      <h3>Thanks sudah mampir *⁠\⁠0⁠/⁠*</h3>
+      <p>Tanya dan atau order?</p>
+      <a href="https://wa.me/+6285155308288" class="cta-button">Chat?</a>
+    </div>
+  </main>
+
+  <footer class="footer-text">
+    Developed, produced and run by fzh for betterlyfe • 100% Indonesia ❤️
+  </footer>
+</div>
+<script>
+  "use strict";
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const ITEMS_PER_PAGE = 8;
+    let currentFilter = 'all';
+    let currentCount = ITEMS_PER_PAGE;
+
+    const productList = document.getElementById('productList');
+    const loadMoreBtn = document.getElementById('loadMoreBtn');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+
+    function getAllItems() {
+      return [...productList.querySelectorAll('li[data-category]')];
+    }
+
+    function renderItems() {
+      const items = getAllItems();
+      const filtered = items.filter(item => 
+        currentFilter === 'all' || item.dataset.category === currentFilter
+      );
+
+      items.forEach(item => item.classList.add('hidden-item'));
+      filtered.slice(0, currentCount).forEach(item => item.classList.remove('hidden-item'));
+
+      document.querySelectorAll('.item-details.show').forEach(d => d.classList.remove('show'));
+      document.querySelectorAll('.link-container[aria-expanded="true"]').forEach(btn => btn.setAttribute('aria-expanded', 'false'));
+      document.querySelectorAll('.product-item.is-active').forEach(li => li.classList.remove('is-active'));
+
+      loadMoreBtn.style.display = filtered.length <= currentCount ? 'none' : 'inline-block';
+    }
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
         });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+        currentFilter = btn.dataset.filter;
+        currentCount = ITEMS_PER_PAGE;
+        renderItems();
+      });
     });
 
-    // smooth scroll untuk anchor
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            const target = document.querySelector(targetId);
-            if (target) {
-                e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                // tutup mobile menu jika terbuka
-                if (navLinks.classList.contains('show')) {
-                    navLinks.classList.remove('show');
-                    menuBtn.textContent = '☰';
-                }
-            }
-        });
+    loadMoreBtn.addEventListener('click', () => {
+      currentCount += ITEMS_PER_PAGE;
+      renderItems();
     });
+
+    function toggleDetails(e) {
+      const button = e.currentTarget;
+      const parentLi = button.closest('.product-item');
+      if (!parentLi) return;
+      const detailsDiv = parentLi.querySelector('.item-details');
+      const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+      document.querySelectorAll('.item-details.show').forEach(detail => {
+        if (detail !== detailsDiv) {
+          detail.classList.remove('show');
+          const otherBtn = detail.closest('.product-item')?.querySelector('.link-container');
+          if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+          otherBtn?.closest('.product-item')?.classList.remove('is-active');
+        }
+      });
+
+      if (!isExpanded) {
+        detailsDiv.classList.add('show');
+        button.setAttribute('aria-expanded', 'true');
+        parentLi.classList.add('is-active');
+      } else {
+        detailsDiv.classList.remove('show');
+        button.setAttribute('aria-expanded', 'false');
+        parentLi.classList.remove('is-active');
+      }
+    }
+
+    document.querySelectorAll('.link-container').forEach(btn => {
+      btn.addEventListener('click', toggleDetails);
+      btn.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleDetails(e);
+        }
+      });
+    });
+
+    document.fonts.ready.then(() => {
+      document.body.classList.add('fonts-loaded');
+    });
+
+    renderItems();
+  });
 </script>
 </body>
 </html>
