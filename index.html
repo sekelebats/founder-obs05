@@ -462,6 +462,97 @@
                 flex-basis: 100%;
             }
         }
+
+        /* ===== MODAL PREVIEW (MINIMALIS) ===== */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(6px);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-container {
+            background: #ffffff;
+            width: 92%;
+            max-width: 900px;
+            height: 85%;
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            animation: fadeIn 0.25s ease;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.9rem 1.5rem;
+            border-bottom: 1px solid #f0f0f0;
+            font-family: 'Newsreader', serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #1a1a1a;
+            background: white;
+        }
+
+        .btn-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #888;
+            cursor: pointer;
+            transition: color 0.2s;
+            line-height: 1;
+        }
+
+        .btn-close:hover {
+            color: #000;
+        }
+
+        .modal-body {
+            flex: 1;
+            position: relative;
+            background: #fafafa;
+        }
+
+        .modal-body iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        .loading-indicator {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            font-size: 0.85rem;
+            color: #888;
+            display: none;
+        }
+
+        /* Responsive modal */
+        @media (max-width: 640px) {
+            .modal-container {
+                width: 95%;
+                height: 90%;
+                border-radius: 18px;
+            }
+            .modal-header {
+                padding: 0.7rem 1rem;
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -519,7 +610,7 @@
                         <div class="details-desc">Fleksibel, atur produk sendiri, setiap produk bisa link WA dengan pesan
                             custom.</div>
                         <div class="action-row">
-                            <a href="https://betterlyfe.netlify.app" class="action-link" target="_blank">
+                            <a href="https://betterlyfe.netlify.app" class="action-link demo-link">
                                 <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Demo
                             </a>
                             <a href="https://wa.me/6285155308288?text=saya%20mau%20pesan%20betterlyfe" class="action-link">
@@ -528,7 +619,7 @@
                         </div>
                     </div>
                 </li>
-                <li data-category="link-in-bio" class="product-item">
+                   <li data-category="link-in-bio" class="product-item">
                     <button class="link-container" aria-expanded="false">
                         <span>Nitrate</span><span class="meta">Rp 149k</span>
                     </button>
@@ -536,7 +627,7 @@
                         <img src="https://placehold.co/600x400/EEE/333?text=Nitrate+Preview" class="product-img">
                         <div class="details-desc">Minimalis, mode gelap/terang. Pas untuk bio Instagram yang bersih.</div>
                         <div class="action-row">
-                            <a href="https://nitrate.netlify.app" class="action-link" target="_blank">
+                            <a href="https://nitrate.netlify.app" class="action-link demo-link">
                                 <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Demo
                             </a>
                             <a href="https://wa.me/6285155308288?text=saya%20mau%20pesan%20nitrate" class="action-link">
@@ -553,7 +644,7 @@
                         <img src="https://placehold.co/600x400/EEE/333?text=Kertas+Demo" class="product-img">
                         <div class="details-desc">Halaman sangat minimalis, cocok untuk personal branding.</div>
                         <div class="action-row">
-                            <a href="https://kertasdotio.netlify.app" class="action-link" target="_blank">
+                            <a href="https://kertasdotio.netlify.app" class="action-link demo-link">
                                 <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Demo
                             </a>
                             <a href="https://wa.me/6285155308288?text=saya%20mau%20pesan%20kertas" class="action-link">
@@ -562,7 +653,7 @@
                         </div>
                     </div>
                 </li>
-            <li data-category="store" class="product-item">
+                <li data-category="store" class="product-item">
                     <button class="link-container" aria-expanded="false">
                         <span>Kelontong</span><span class="meta">Rp 250k</span>
                     </button>
@@ -570,7 +661,7 @@
                         <img src="https://placehold.co/600x400/EEE/333?text=Kelontong+Store" class="product-img">
                         <div class="details-desc">Tampilan toko kecil dengan produk unggulan. Cocok UKM.</div>
                         <div class="action-row">
-                            <a href="https://kelontong.netlify.app" class="action-link" target="_blank">
+                            <a href="https://kelontong.netlify.app" class="action-link demo-link">
                                 <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Demo
                             </a>
                             <a href="https://wa.me/6285155308288?text=saya%20mau%20pesan%20kelontong" class="action-link">
@@ -587,284 +678,351 @@
                         <img src="https://placehold.co/600x400/EEE/333?text=Explainedby" class="product-img">
                         <div class="details-desc">Link-in-bio dengan cerita personal. Bangun kepercayaan audiens.</div>
                         <div class="action-row">
-                            <a href="https://explainedby.carrd.co" class="action-link" target="_blank">
+                            <a href="https://explainedby.carrd.co" class="action-link demo-link">
                                 <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Demo
                             </a>
                             <a href="https://wa.me/6285155308288?text=saya%20mau%20pesan%20explainedby"
-                            class="action-link">
-                            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp
-                        </a>
+                                class="action-link">
+                                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp
+                            </a>
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li data-category="card" class="product-item">
-                <button class="link-container" aria-expanded="false">
-                    <span>Cardpro</span><span class="meta">Rp 99k</span>
+                </li>
+                <li data-category="card" class="product-item">
+                    <button class="link-container" aria-expanded="false">
+                        <span>Cardpro</span><span class="meta">Rp 99k</span>
+                    </button>
+                    <div class="item-details">
+                        <img src="https://placehold.co/600x400/EEE/333?text=Cardpro" class="product-img">
+                        <div class="details-desc">Kartu nama online modern: intro, kontak, porto kecil.</div>
+                        <div class="action-row">
+                            <a href="https://cardpro.carrd.co" class="action-link demo-link">
+                                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Demo
+                            </a>
+                            <a href="https://wa.me/6285155308288?text=saya%20mau%20pesan%20cardpro" class="action-link">
+                                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li data-category="one-page" class="product-item">
+                    <button class="link-container" aria-expanded="false">
+                        <span>Pizzariaa</span><span class="meta">Rp 189k</span>
+                    </button>
+                    <div class="item-details">
+                        <img src="https://placehold.co/600x400/EEE/333?text=Pizzariaa" class="product-img">
+                        <div class="details-desc">Untuk industri rumahan makanan, setiap produk dilengkapi bahan dan CTA.
+                        </div>
+                        <div class="action-row">
+                            <a href="https://pizzariaa.carrd.co" class="action-link demo-link">
+                                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Demo
+                            </a>
+                            <a href="https://wa.me/6285155308288?text=saya%20mau%20pesan%20pizzariaa" class="action-link">
+                                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li data-category="one-page" class="product-item">
+                    <button class="link-container" aria-expanded="false">
+                        <span>Tokokopi</span><span class="meta">Rp 119k</span>
+                    </button>
+                    <div class="item-details">
+                        <img src="https://placehold.co/600x400/EEE/333?text=Tokokopi" class="product-img">
+                        <div class="details-desc">Halaman sederhana untuk promosi toko: intro, produk, CTA.</div>
+                        <div class="action-row">
+                            <a href="https://tokokopi.carrd.co" class="action-link demo-link">
+                                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Demo
+                            </a>
+                            <a href="https://wa.me/6285155308288?text=saya%20mau%20pesan%20tokokopi" class="action-link">
+                                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li data-category="link-in-bio" class="product-item">
+                    <button class="link-container" aria-expanded="false">
+                        <span>Reallyformal</span><span class="meta">Rp 159k</span>
+                    </button>
+                    <div class="item-details">
+                        <img src="https://placehold.co/600x400/EEE/333?text=Reallyformal" class="product-img">
+                        <div class="details-desc">One page sebagai resume online. Pas untuk networking.</div>
+                        <div class="action-row">
+                            <a href="https://reallyformal.carrd.co" class="action-link demo-link">
+                                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Demo
+                            </a>
+                            <a href="https://wa.me/6285155308288?text=saya%20mau%20pesan%20reallyformal"
+                                class="action-link">
+                                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li data-category="card" class="product-item">
+                    <button class="link-container" aria-expanded="false">
+                        <span>Ngopislur</span><span class="meta">Rp 139k</span>
+                    </button>
+                    <div class="item-details">
+                        <img src="https://placehold.co/600x400/EEE/333?text=Ngopislur" class="product-img">
+                        <div class="details-desc">Tampilan lebih formal, cocok bisnis skala menengah.</div>
+                        <div class="action-row">
+                            <a href="https://ngopislur.carrd.co" class="action-link demo-link">
+                                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Demo
+                            </a>
+                            <a href="https://wa.me/6285155308288?text=saya%20mau%20pesan%20ngopislur" class="action-link">
+                                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="load-more">
+                <button class="load-more-btn" id="loadMoreBtn">
+                    <i class="fa-solid fa-chevron-down" aria-hidden="true"></i> Tampilkan lebih banyak
                 </button>
-                <div class="item-details">
-                    <img src="https://placehold.co/600x400/EEE/333?text=Cardpro" class="product-img">
-                    <div class="details-desc">Kartu nama online modern: intro, kontak, porto kecil.</div>
-                    <div class="action-row">
-                        <a href="https://cardpro.carrd.co" class="action-link" target="_blank">
-                            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Demo
-                        </a>
-                        <a href="https://wa.me/6285155308288?text=saya%20mau%20pesan%20cardpro" class="action-link">
-                            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp
-                        </a>
-                    </div>
-                </div>
-            </li>
-            <li data-category="one-page" class="product-item">
-                <button class="link-container" aria-expanded="false">
-                    <span>Pizzariaa</span><span class="meta">Rp 189k</span>
-                </button>
-                <div class="item-details">
-                    <img src="https://placehold.co/600x400/EEE/333?text=Pizzariaa" class="product-img">
-                    <div class="details-desc">Untuk industri rumahan makanan, setiap produk dilengkapi bahan dan CTA.
-                    </div>
-                    <div class="action-row">
-                        <a href="https://pizzariaa.carrd.co" class="action-link" target="_blank">
-                            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Demo
-                        </a>
-                        <a href="https://wa.me/6285155308288?text=saya%20mau%20pesan%20pizzariaa" class="action-link">
-                            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp
-                        </a>
-                    </div>
-                </div>
-            </li>
-            <li data-category="one-page" class="product-item">
-                <button class="link-container" aria-expanded="false">
-                    <span>Tokokopi</span><span class="meta">Rp 119k</span>
-                </button>
-                <div class="item-details">
-                    <img src="https://placehold.co/600x400/EEE/333?text=Tokokopi" class="product-img">
-                    <div class="details-desc">Halaman sederhana untuk promosi toko: intro, produk, CTA.</div>
-                    <div class="action-row">
-                        <a href="https://tokokopi.carrd.co" class="action-link" target="_blank">
-                            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Demo
-                        </a>
-                        <a href="https://wa.me/6285155308288?text=saya%20mau%20pesan%20tokokopi" class="action-link">
-                            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp
-                        </a>
-                    </div>
-                </div>
-            </li>
-            <li data-category="link-in-bio" class="product-item">
-                <button class="link-container" aria-expanded="false">
-                    <span>Reallyformal</span><span class="meta">Rp 159k</span>
-                </button>
-                <div class="item-details">
-                    <img src="https://placehold.co/600x400/EEE/333?text=Reallyformal" class="product-img">
-                    <div class="details-desc">One page sebagai resume online. Pas untuk networking.</div>
-                    <div class="action-row">
-                        <a href="https://reallyformal.carrd.co" class="action-link" target="_blank">
-                            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Demo
-                        </a>
-                        <a href="https://wa.me/6285155308288?text=saya%20mau%20pesan%20reallyformal"
-                        class="action-link">
-                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp
-                    </a>
-                </div>
             </div>
-        </li>
-        <li data-category="card" class="product-item">
-            <button class="link-container" aria-expanded="false">
-                <span>Ngopislur</span><span class="meta">Rp 139k</span>
-            </button>
-            <div class="item-details">
-                <img src="https://placehold.co/600x400/EEE/333?text=Ngopislur" class="product-img">
-                <div class="details-desc">Tampilan lebih formal, cocok bisnis skala menengah.</div>
-                <div class="action-row">
-                    <a href="https://ngopislur.carrd.co" class="action-link" target="_blank">
-                        <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Demo
-                    </a>
-                    <a href="https://wa.me/6285155308288?text=saya%20mau%20pesan%20ngopislur" class="action-link">
-                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp
-                    </a>
-                </div>
-            </div>
-        </li>
-    </ul>
-    <div class="load-more">
-        <button class="load-more-btn" id="loadMoreBtn">
-            <i class="fa-solid fa-chevron-down" aria-hidden="true"></i> Tampilkan lebih banyak
-        </button>
-    </div>
  <!-- Layanan & Jasa -->
-    <div class="info-card">
-        <h3><i class="fa-solid fa-box" aria-hidden="true"></i> Layanan & Jasa Kami</h3>
-        <div class="grid-services">
-            <div class="service">
-                <i class="fa-solid fa-rocket" aria-hidden="true"></i>
-                <strong>Deployment Netlify / Vercel</strong>
-                <p>Hosting gratis, akun Anda sendiri</p>
+            <div class="info-card">
+                <h3><i class="fa-solid fa-box" aria-hidden="true"></i> Layanan & Jasa Kami</h3>
+                <div class="grid-services">
+                    <div class="service">
+                        <i class="fa-solid fa-rocket" aria-hidden="true"></i>
+                        <strong>Deployment Netlify / Vercel</strong>
+                        <p>Hosting gratis, akun Anda sendiri</p>
+                    </div>
+                    <div class="service">
+                        <i class="fa-solid fa-palette" aria-hidden="true"></i>
+                        <strong>Desain Carrd (Free)</strong>
+                        <p>One-page elegan, fitur pro bisa ditambah</p>
+                    </div>
+                    <div class="service">
+                        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                        <strong>Kurasi Kode (GitHub, WP)</strong>
+                        <p>Template legal lisensi MIT/GPL</p>
+                    </div>
+                    <div class="service">
+                        <i class="fa-solid fa-gear" aria-hidden="true"></i>
+                        <strong>Instalasi & Maintenance</strong>
+                        <p>Setup kode, instalasi plugin, konfigurasi</p>
+                    </div>
+                </div>
+                <p style="text-align:center; font-size:0.85rem; margin-top:0.5rem;"><strong>Kenapa kami?</strong> Hemat biaya,
+                    akun milik Anda, legal, tanpa ribet ngoding.</p>
             </div>
-            <div class="service">
-                <i class="fa-solid fa-palette" aria-hidden="true"></i>
-                <strong>Desain Carrd (Free)</strong>
-                <p>One-page elegan, fitur pro bisa ditambah</p>
+
+            <div class="info-card">
+                <h3><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Masalah yang sering terjadi</h3>
+                <p style="text-align:center; font-size:0.9rem;">Biaya hosting mahal? Bingung template legal? Gak mau ribet
+                    ngoding? <strong>Kami hadir memberikan solusi.</strong> Maksimalkan platform gratis + kurasi kode
+                berlisensi.</p>
             </div>
-            <div class="service">
-                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-                <strong>Kurasi Kode (GitHub, WP)</strong>
-                <p>Template legal lisensi MIT/GPL</p>
+
+            <div class="info-card">
+                <h3><i class="fa-solid fa-users" aria-hidden="true"></i> Siapa yang cocok?</h3>
+                <ul class="why-list">
+                    <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Konten kreator butuh link in bio yang
+                    keren</li>
+                    <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Freelancer ingin portfolio online cepat</li>
+                    <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Pebisnis kecil yang ingin landing page
+                    sederhana & efektif</li>
+                    <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Siapa pun yang ingin tampil profesional di
+                    internet tanpa ribet & mahal</li>
+                </ul>
+                <div class="cta-primary" style="margin: 1rem 0 0;">
+                    <a href="https://wa.me/+6285155308288" class="btn-wa">
+                        <i class="fa-solid fa-bullseye" aria-hidden="true"></i> Saya tertarik, hubungi sekarang
+                    </a>
+                </div>
             </div>
-            <div class="service">
-                <i class="fa-solid fa-gear" aria-hidden="true"></i>
-                <strong>Instalasi & Maintenance</strong>
-                <p>Setup kode, instalasi plugin, konfigurasi</p>
+
+            <div class="info-card">
+                <h3><i class="fa-solid fa-scroll" aria-hidden="true"></i> Tentang Kurasi & Lisensi</h3>
+                <p style="font-size:0.9rem;"><strong>Kami tidak menjual kode, kami menjual hasil kurasi.</strong> Semua aset
+                    bersumber dari GitHub, WordPress.org dengan lisensi yang memperbolehkan redistribusi (MIT, GPL, dll).</p>
+                <div class="license-note">
+                    <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                    <span><strong>Legal 100%</strong> – Kami hanya menyertakan aset berlisensi jelas. Anda bebas menggunakan
+                    untuk proyek pribadi/klien.</span>
+                </div>
+                <details>
+                    <summary>
+                        <i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Syarat & Ketentuan ringkas
+                    </summary>
+                    <div style="font-size:0.75rem; margin-top:0.6rem;">
+                        <p>- Produk kami koleksi kurasi, bukan klaim kepemilikan.<br>
+                            - Lisensi asli tetap berlaku (MIT, GPL, dll).<br>
+                            - Dilarang menjual koleksi kurasi sebagai milik Anda.<br>
+                            - Penjualan final karena sifat digital.<br>
+                        <em>Terakhir diperbarui: 20 Mei 2026</em></p>
+                    </div>
+                </details>
+            </div>
+
+            <div class="cta-primary" style="margin: 0.5rem 0 2.5rem;">
+                <a href="https://wa.me/+6285155308288" class="btn-wa">
+                    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Konsultasi & Order via WhatsApp
+                </a>
+            </div>
+        </main>
+        <footer class="footer">
+            Developed, produced & run by fzh untuk betterlyfe • 100% Indonesia
+            <i class="fa-solid fa-heart" aria-hidden="true"></i>
+        </footer>
+    </div>
+  <!-- ==================== MODAL PREVIEW ==================== -->
+    <div class="modal-overlay" id="modalDemo">
+        <div class="modal-container">
+            <div class="modal-header">
+                <span id="modalTitle">Demo</span>
+                <button class="btn-close" onclick="tutupDemo()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="loading-indicator" id="loadingText">Memuat pratinjau...</div>
+                <iframe id="frameDemo" src="" title="Preview Tema"></iframe>
             </div>
         </div>
-        <p style="text-align:center; font-size:0.85rem; margin-top:0.5rem;"><strong>Kenapa kami?</strong> Hemat biaya,
-            akun milik Anda, legal, tanpa ribet ngoding.</p>
     </div>
 
-    <div class="info-card">
-        <h3><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Masalah yang sering terjadi</h3>
-        <p style="text-align:center; font-size:0.9rem;">Biaya hosting mahal? Bingung template legal? Gak mau ribet
-            ngoding? <strong>Kami hadir memberikan solusi.</strong> Maksimalkan platform gratis + kurasi kode
-        berlisensi.</p>
-    </div>
+    <script>
+        (function() {
+            const ITEMS_PER_PAGE = 6;
+            let currentFilter = 'all';
+            let currentCount = ITEMS_PER_PAGE;
+            const productList = document.getElementById('productList');
+            const loadMoreBtn = document.getElementById('loadMoreBtn');
+            const filterBtns = document.querySelectorAll('.filter-btn');
 
-    <div class="info-card">
-        <h3><i class="fa-solid fa-users" aria-hidden="true"></i> Siapa yang cocok?</h3>
-        <ul class="why-list">
-            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Konten kreator butuh link in bio yang
-            keren</li>
-            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Freelancer ingin portfolio online cepat</li>
-            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Pebisnis kecil yang ingin landing page
-            sederhana & efektif</li>
-            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Siapa pun yang ingin tampil profesional di
-            internet tanpa ribet & mahal</li>
-        </ul>
-        <div class="cta-primary" style="margin: 1rem 0 0;">
-            <a href="https://wa.me/+6285155308288" class="btn-wa">
-                <i class="fa-solid fa-bullseye" aria-hidden="true"></i> Saya tertarik, hubungi sekarang
-            </a>
-        </div>
-    </div>
+            function getAllItems() {
+                return [...productList.querySelectorAll('li[data-category]')];
+            }
 
-    <div class="info-card">
-        <h3><i class="fa-solid fa-scroll" aria-hidden="true"></i> Tentang Kurasi & Lisensi</h3>
-        <p style="font-size:0.9rem;"><strong>Kami tidak menjual kode, kami menjual hasil kurasi.</strong> Semua aset
-            bersumber dari GitHub, WordPress.org dengan lisensi yang memperbolehkan redistribusi (MIT, GPL, dll).</p>
-        <div class="license-note">
-            <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
-            <span><strong>Legal 100%</strong> – Kami hanya menyertakan aset berlisensi jelas. Anda bebas menggunakan
-            untuk proyek pribadi/klien.</span>
-        </div>
-        <details>
-            <summary>
-                <i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Syarat & Ketentuan ringkas
-            </summary>
-            <div style="font-size:0.75rem; margin-top:0.6rem;">
-                <p>- Produk kami koleksi kurasi, bukan klaim kepemilikan.<br>
-                    - Lisensi asli tetap berlaku (MIT, GPL, dll).<br>
-                    - Dilarang menjual koleksi kurasi sebagai milik Anda.<br>
-                    - Penjualan final karena sifat digital.<br>
-                <em>Terakhir diperbarui: 20 Mei 2026</em></p>
-            </div>
-        </details>
-    </div>
+            function renderItems() {
+                const items = getAllItems();
+                const filtered = items.filter(item => currentFilter === 'all' || item.dataset.category ===
+                    currentFilter);
+                items.forEach(item => item.classList.add('hidden-item'));
+                filtered.slice(0, currentCount).forEach(item => item.classList.remove('hidden-item'));
+                document.querySelectorAll('.item-details.show').forEach(d => d.classList.remove('show'));
+                document.querySelectorAll('.link-container[aria-expanded="true"]').forEach(btn => btn.setAttribute(
+                    'aria-expanded', 'false'));
+                document.querySelectorAll('.product-item.is-active').forEach(li => li.classList.remove(
+                'is-active'));
+                if (loadMoreBtn) {
+                    loadMoreBtn.style.display = filtered.length <= currentCount ? 'none' : 'inline-flex';
+                }
+            }
 
-    <div class="cta-primary" style="margin: 0.5rem 0 2.5rem;">
-        <a href="https://wa.me/+6285155308288" class="btn-wa">
-            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Konsultasi & Order via WhatsApp
-        </a>
-    </div>
-</main>
-<footer class="footer">
-    Developed, produced & run by fzh untuk betterlyfe • 100% Indonesia
-    <i class="fa-solid fa-heart" aria-hidden="true"></i>
-</footer>
-</div>
-<script>
-    (function() {
-        const ITEMS_PER_PAGE = 6;
-        let currentFilter = 'all';
-        let currentCount = ITEMS_PER_PAGE;
-        const productList = document.getElementById('productList');
-        const loadMoreBtn = document.getElementById('loadMoreBtn');
-        const filterBtns = document.querySelectorAll('.filter-btn');
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentFilter = btn.dataset.filter;
+                    currentCount = ITEMS_PER_PAGE;
+                    renderItems();
+                });
+            });
 
-        function getAllItems() {
-            return [...productList.querySelectorAll('li[data-category]')];
-        }
-
-        function renderItems() {
-            const items = getAllItems();
-            const filtered = items.filter(item => currentFilter === 'all' || item.dataset.category ===
-                currentFilter);
-            items.forEach(item => item.classList.add('hidden-item'));
-            filtered.slice(0, currentCount).forEach(item => item.classList.remove('hidden-item'));
-            document.querySelectorAll('.item-details.show').forEach(d => d.classList.remove('show'));
-            document.querySelectorAll('.link-container[aria-expanded="true"]').forEach(btn => btn.setAttribute(
-                'aria-expanded', 'false'));
-            document.querySelectorAll('.product-item.is-active').forEach(li => li.classList.remove(
-            'is-active'));
             if (loadMoreBtn) {
-                loadMoreBtn.style.display = filtered.length <= currentCount ? 'none' : 'inline-flex';
+                loadMoreBtn.addEventListener('click', () => {
+                    currentCount += ITEMS_PER_PAGE;
+                    renderItems();
+                });
             }
-        }
 
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                currentFilter = btn.dataset.filter;
-                currentCount = ITEMS_PER_PAGE;
-                renderItems();
+            function toggleDetails(e) {
+                const btn = e.currentTarget;
+                const parentLi = btn.closest('.product-item');
+                if (!parentLi) return;
+                const detailsDiv = parentLi.querySelector('.item-details');
+                const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+
+                document.querySelectorAll('.item-details.show').forEach(detail => {
+                    if (detail !== detailsDiv) {
+                        detail.classList.remove('show');
+                        const otherBtn = detail.closest('.product-item')?.querySelector(
+                        '.link-container');
+                        if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+                        otherBtn?.closest('.product-item')?.classList.remove('is-active');
+                    }
+                });
+
+                if (!isExpanded) {
+                    detailsDiv.classList.add('show');
+                    btn.setAttribute('aria-expanded', 'true');
+                    parentLi.classList.add('is-active');
+                } else {
+                    detailsDiv.classList.remove('show');
+                    btn.setAttribute('aria-expanded', 'false');
+                    parentLi.classList.remove('is-active');
+                }
+            }
+
+            document.querySelectorAll('.link-container').forEach(btn => {
+                btn.addEventListener('click', toggleDetails);
+                btn.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        toggleDetails(e);
+                    }
+                });
             });
-        });
 
-        if (loadMoreBtn) {
-            loadMoreBtn.addEventListener('click', () => {
-                currentCount += ITEMS_PER_PAGE;
-                renderItems();
-            });
-        }
+            // ========== MODAL LOGIC ==========
+            const modal = document.getElementById('modalDemo');
+            const frame = document.getElementById('frameDemo');
+            const modalTitle = document.getElementById('modalTitle');
+            const loadingEl = document.getElementById('loadingText');
 
-        function toggleDetails(e) {
-            const btn = e.currentTarget;
-            const parentLi = btn.closest('.product-item');
-            if (!parentLi) return;
-            const detailsDiv = parentLi.querySelector('.item-details');
-            const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+            function bukaDemo(url, nama) {
+                loadingEl.style.display = 'block';
+                frame.src = url;
+                modalTitle.textContent = 'Demo: ' + nama;
+                modal.style.display = 'flex';
+                frame.onload = () => {
+                    loadingEl.style.display = 'none';
+                };
+            }
 
-            document.querySelectorAll('.item-details.show').forEach(detail => {
-                if (detail !== detailsDiv) {
-                    detail.classList.remove('show');
-                    const otherBtn = detail.closest('.product-item')?.querySelector(
-                    '.link-container');
-                    if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
-                    otherBtn?.closest('.product-item')?.classList.remove('is-active');
+            window.tutupDemo = function() {
+                modal.style.display = 'none';
+                frame.src = '';
+                loadingEl.style.display = 'none';
+                modalTitle.textContent = 'Demo';
+            };
+
+            // Tutup modal dengan klik di luar container
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    tutupDemo();
                 }
             });
 
-            if (!isExpanded) {
-                detailsDiv.classList.add('show');
-                btn.setAttribute('aria-expanded', 'true');
-                parentLi.classList.add('is-active');
-            } else {
-                detailsDiv.classList.remove('show');
-                btn.setAttribute('aria-expanded', 'false');
-                parentLi.classList.remove('is-active');
-            }
-        }
+            // Tombol ESC
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.style.display === 'flex') {
+                    tutupDemo();
+                }
+            });
 
-        document.querySelectorAll('.link-container').forEach(btn => {
-            btn.addEventListener('click', toggleDetails);
-            btn.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
+            // Tambahkan event listener ke semua link Demo (class .demo-link)
+            document.querySelectorAll('.demo-link').forEach(link => {
+                link.addEventListener('click', function(e) {
                     e.preventDefault();
-                    toggleDetails(e);
-                }
+                    const url = this.getAttribute('href');
+                    // Ambil nama produk dari parent li (misal span pertama di .link-container)
+                    const productItem = this.closest('.product-item');
+                    let namaProduk = 'Template';
+                    if (productItem) {
+                        const titleSpan = productItem.querySelector('.link-container span:first-child');
+                        if (titleSpan) namaProduk = titleSpan.textContent.trim();
+                    }
+                    bukaDemo(url, namaProduk);
+                });
             });
-        });
 
-        document.fonts.ready.then(() => document.body.classList.add('loaded'));
-        renderItems();
-    })();
-</script>
+            document.fonts.ready.then(() => document.body.classList.add('loaded'));
+            renderItems();
+        })();
+    </script>
 </body>
 </html>
